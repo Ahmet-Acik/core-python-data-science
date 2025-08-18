@@ -57,11 +57,11 @@ ratio = gpa / 4
 is_high_score = score > 90
 
 # 4. LISTS, TUPLES, SETS, DICTS
-fruits = ["apple", "banana", "kiwi"]
+fruits = ["apple", "banana", "kiwi"] # List
 fruits.append("pear")
-colors = ("red", "green", "blue")
-unique_fruits = {"apple", "banana", "apple"}
-person = {"name": name, "age": age}
+colors = ("red", "green", "blue") # Tuple
+unique_fruits = {"apple", "banana", "apple"} # Set
+person = {"name": name, "age": age} # Dict
 person["city"] = "Bursa"
 
 # 5. CONTROL FLOW
