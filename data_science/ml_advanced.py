@@ -15,19 +15,21 @@ from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_sc
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, roc_curve
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
-import joblib
 
-def random_forest_example():
+import joblib
 
 # --- DRY HELPERS ---
 def get_iris():
-    iris = load_iris(as_frame=True)
-    return iris.data, iris.target
+    X, y = load_iris(return_X_y=True)
+    return X, y
 
 def get_train_test(X=None, y=None, test_size=0.2, random_state=42):
     if X is None or y is None:
         X, y = get_iris()
     return train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+
+
 
 # 1. ENSEMBLE METHODS
 def random_forest_example():
@@ -43,6 +45,11 @@ def random_forest_example():
 
 def pca_kmeans_example():
     X, _ = get_iris()
+    # Ensure X is always a NumPy array or DataFrame
+    if hasattr(X, 'data'):
+        X = X.data
+    elif hasattr(X, 'values'):
+        X = X.values
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     pca = PCA(n_components=2)
@@ -56,7 +63,7 @@ def pca_kmeans_example():
 
 def cross_val_and_roc():
     X, y = get_iris()
-    X_bin = (y == 0).astype(int)  # Binary for ROC
+    X_bin = (np.array(y) == 0).astype(int)  # Binary for ROC
     X_train, X_test, y_train, y_test = get_train_test(X, X_bin)
     clf = GradientBoostingClassifier()
     scores = cross_val_score(clf, X_train, y_train, cv=5)
@@ -105,7 +112,11 @@ def feature_importance_example():
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X, y)
     importances = clf.feature_importances_
-    print('Feature importances:', dict(zip(X.columns, importances)))
+    if isinstance(X, pd.DataFrame):
+        feature_names = X.columns
+    else:
+        feature_names = [f"feature_{i}" for i in range(X.shape[1])]
+    print('Feature importances:', dict(zip(feature_names, importances)))
 
 if __name__ == "__main__":
     print("--- Advanced ML Examples ---")
