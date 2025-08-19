@@ -149,7 +149,7 @@ def deserialize_json(filename: str) -> dict:
 # 10. METACLASSES
 class UpperAttrMeta(type):
     def __new__(cls, name, bases, dct):
-        attrs = {k.upper(): v for k, v in dct.items()}
+        attrs = {k.upper() if not (k.startswith('__') and k.endswith('__')) else k: v for k, v in dct.items()}
         return super().__new__(cls, name, bases, attrs)
 class Foo(metaclass=UpperAttrMeta):
     bar = 'baz'
