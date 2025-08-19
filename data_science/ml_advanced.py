@@ -17,15 +17,22 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 import joblib
 
-# 1. ENSEMBLE METHODS
-
 def random_forest_example():
+
+# --- DRY HELPERS ---
+def get_iris():
     iris = load_iris(as_frame=True)
-    if isinstance(iris, tuple):
-        iris = iris[0]
-    X = iris.data
-    y = iris.target
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    return iris.data, iris.target
+
+def get_train_test(X=None, y=None, test_size=0.2, random_state=42):
+    if X is None or y is None:
+        X, y = get_iris()
+    return train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+# 1. ENSEMBLE METHODS
+def random_forest_example():
+    X, y = get_iris()
+    X_train, X_test, y_train, y_test = get_train_test(X, y)
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X_train, y_train)
     preds = clf.predict(X_test)
@@ -35,8 +42,7 @@ def random_forest_example():
 # 2. UNSUPERVISED LEARNING
 
 def pca_kmeans_example():
-    iris = load_iris()
-    X = iris.data
+    X, _ = get_iris()
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     pca = PCA(n_components=2)
@@ -49,10 +55,9 @@ def pca_kmeans_example():
 # 3. MODEL EVALUATION
 
 def cross_val_and_roc():
-    iris = load_iris(as_frame=True)
-    X, y = iris.data, iris.target
+    X, y = get_iris()
     X_bin = (y == 0).astype(int)  # Binary for ROC
-    X_train, X_test, y_train, y_test = train_test_split(X, X_bin, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = get_train_test(X, X_bin)
     clf = GradientBoostingClassifier()
     scores = cross_val_score(clf, X_train, y_train, cv=5)
     print('CV scores:', scores)
@@ -67,9 +72,8 @@ def cross_val_and_roc():
 # 4. HYPERPARAMETER TUNING
 
 def grid_search_example():
-    iris = load_iris(as_frame=True)
-    X, y = iris.data, iris.target
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X, y = get_iris()
+    X_train, X_test, y_train, y_test = get_train_test(X, y)
     pipe = Pipeline([
         ('scaler', StandardScaler()),
         ('rf', RandomForestClassifier(random_state=42))
@@ -86,9 +90,8 @@ def grid_search_example():
 # 5. MODEL PERSISTENCE
 
 def save_and_load_model():
-    iris = load_iris(as_frame=True)
-    X, y = iris.data, iris.target
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X, y = get_iris()
+    X_train, X_test, y_train, y_test = get_train_test(X, y)
     clf = RandomForestClassifier(n_estimators=10, random_state=42)
     clf.fit(X_train, y_train)
     joblib.dump(clf, 'rf_model.joblib')
@@ -98,8 +101,7 @@ def save_and_load_model():
 # 6. MODEL INTERPRETABILITY (Feature Importances)
 
 def feature_importance_example():
-    iris = load_iris(as_frame=True)
-    X, y = iris.data, iris.target
+    X, y = get_iris()
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X, y)
     importances = clf.feature_importances_
