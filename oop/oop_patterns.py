@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
     print("\n--- Metaclasses ---")
     print(hasattr(Foo, 'BAR'))
-    print(Foo.BAR)
+    print(getattr(Foo, 'BAR'))
 
     print("\n--- OOP in Data Science ---")
     scaler = StandardScalerDS().fit([1, 2, 3, 4, 5])
