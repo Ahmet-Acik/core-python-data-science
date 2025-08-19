@@ -6,7 +6,7 @@ Covers: classes, attributes, methods, inheritance, polymorphism, encapsulation, 
 """
 
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Optional
 from dataclasses import dataclass
 
 # 1. BASIC CLASS & INSTANCE
@@ -95,7 +95,7 @@ class Employee:
         return f"{self.name}: ${self.salary:.2f}"
 
 class Manager(Employee):
-    def __init__(self, name: str, salary: float, reports: list[Employee] = None):
+    def __init__(self, name: str, salary: float, reports: 'Optional[list[Employee]]' = None):
         super().__init__(name, salary)
         self.reports = reports or []
     def add_report(self, emp: Employee):
