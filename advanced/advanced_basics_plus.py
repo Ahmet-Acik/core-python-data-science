@@ -77,3 +77,13 @@ s = set([1,2,3,2])
 fs = frozenset([4,5,6])
 print("set:", s)
 print("frozenset:", fs)
+
+# --- CUSTOM EXCEPTIONS & CHAINING ---
+class MyError(Exception): pass
+try:
+    try:
+        raise ValueError("Inner error")
+    except ValueError as e:
+        raise MyError("Outer error") from e
+except MyError as e:
+    print("Exception chaining:", e)
