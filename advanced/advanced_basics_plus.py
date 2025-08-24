@@ -172,3 +172,38 @@ print("lookbehind:", lookbehind)
 dt = datetime(2025, 8, 24, 12, 0, tzinfo=timezone.utc)
 print("timedelta:", dt + timedelta(days=5))
 print("timezone:", dt.astimezone(timezone(timedelta(hours=3))))
+
+
+# --- ARGPARSE: MUTUALLY EXCLUSIVE, GROUPS ---
+def argparse_demo():
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--foo', action='store_true')
+    group.add_argument('--bar', action='store_true')
+    parser.add_argument('--baz', type=int, required=True)
+    # args = parser.parse_args()
+    # print(args)
+    
+# --- OOP: DATACLASSES, SINGLETON, FACTORY ---
+from dataclasses import dataclass
+@dataclass
+class Person:
+    name: str
+    age: int
+p = Person('Alice', 30)
+print("dataclass:", p)
+class Singleton:
+    _instance = None
+    def __new__(cls, *a, **kw):
+        if not cls._instance:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+s1 = Singleton()
+s2 = Singleton()
+print("singleton:", s1 is s2)
+class Animal: pass
+class Dog(Animal): pass
+class Cat(Animal): pass
+def animal_factory(kind: str) -> Animal:
+    return {'dog': Dog(), 'cat': Cat()}.get(kind, Animal())
+print("factory:", type(animal_factory('dog')))
