@@ -71,3 +71,9 @@ df2 = df.copy()
 df2['A'][0] = 99
 print("Original DataFrame:\n", df)
 print("Copied DataFrame:\n", df2)
+
+# --- SETS AND FROZENSETS ---
+s = set([1,2,3,2])
+fs = frozenset([4,5,6])
+print("set:", s)
+print("frozenset:", fs)
