@@ -105,3 +105,11 @@ df.to_excel(xlsx_path)
 print("Excel read:\n", pd.read_excel(xlsx_path))
 os.remove(xlsx_path)
 
+
+# --- GENERATORS & ITERTOOLS ---
+def gen():
+    for i in range(3):
+        yield i*i
+print("generator:", list(gen()))
+print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
+
