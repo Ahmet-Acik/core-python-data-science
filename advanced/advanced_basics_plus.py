@@ -49,6 +49,7 @@ from datetime import datetime, timedelta, timezone
 import argparse
 import itertools
 
+
 # --- ADVANCED BUILT-INS ---
 nums = [1, 2, 3, 4, 5]
 print("any >3:", any(x > 3 for x in nums))
@@ -59,6 +60,7 @@ print("map:", list(map(str, nums)))
 print("filter:", list(filter(lambda x: x % 2 == 0, nums)))
 print("reduce (sum):", reduce(add, nums))
 
+
 # --- SLICING WITH NUMPY/PANDAS ---
 arr = np.arange(10)
 print("numpy slice:", arr[2:7:2])
@@ -66,17 +68,20 @@ df = pd.DataFrame({'A': range(5), 'B': range(5,10)})
 print("pandas iloc:", df.iloc[1:4])
 print("pandas loc:", df.loc[1:3])
 
+
 # --- COPYING WITH PANDAS ---
 df2 = df.copy()
 df2['A'][0] = 99
 print("Original DataFrame:\n", df)
 print("Copied DataFrame:\n", df2)
 
+
 # --- SETS AND FROZENSETS ---
 s = set([1,2,3,2])
 fs = frozenset([4,5,6])
 print("set:", s)
 print("frozenset:", fs)
+
 
 # --- CUSTOM EXCEPTIONS & CHAINING ---
 class MyError(Exception): pass
@@ -89,6 +94,7 @@ except MyError as e:
     print("Exception chaining:", e)
     
 import tempfile
+
 
 # --- FILE I/O WITH GZIP & EXCEL ---
 with tempfile.NamedTemporaryFile(suffix='.gz', delete=False) as tmp_gz:
@@ -113,10 +119,12 @@ def gen():
 print("generator:", list(gen()))
 print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
 
+
 # --- DICT UNPACKING & FUNCTION CALL UNPACKING ---
 d = {'x': 1, 'y': 2}
 def foo(x, y): return x + y
 print("dict unpacking:", foo(**d))
+
 
 # --- SET & DICT COMPREHENSIONS ---
 set_comp = {x**2 for x in range(5)}
@@ -141,9 +149,20 @@ def length(obj: SupportsLen) -> int:
     return len(obj)
 print("Protocol:", length([1,2,3]))
 
+
 # --- CONTEXTLIB: SUPPRESS, REDIRECT_STDOUT ---
 with suppress(FileNotFoundError):
     os.remove('no_such_file.txt')
 with open('out.txt', 'w') as f, redirect_stdout(f):
     print("redirected to file")
 print("redirected file content:", open('out.txt').read())
+
+
+# --- REGEX: SUB, SPLIT, LOOKAHEAD/BEHIND ---
+s = "foo123bar456baz"
+print("re.sub:", re.sub(r'\d+', '#', s))
+print("re.split:", re.split(r'\d+', s))
+lookahead = re.findall(r'\w+(?=\d+)', s)
+lookbehind = re.findall(r'(?<=\d+)\w+', s)
+print("lookahead:", lookahead)
+print("lookbehind:", lookbehind)
