@@ -117,3 +117,9 @@ print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
 d = {'x': 1, 'y': 2}
 def foo(x, y): return x + y
 print("dict unpacking:", foo(**d))
+
+# --- SET & DICT COMPREHENSIONS ---
+set_comp = {x**2 for x in range(5)}
+dict_comp = {x: x**2 for x in range(5)}
+print("set comp:", set_comp)
+print("dict comp:", dict_comp)
