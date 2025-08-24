@@ -58,3 +58,10 @@ print("enumerate:", list(enumerate(['x','y','z'])))
 print("map:", list(map(str, nums)))
 print("filter:", list(filter(lambda x: x % 2 == 0, nums)))
 print("reduce (sum):", reduce(add, nums))
+
+# --- SLICING WITH NUMPY/PANDAS ---
+arr = np.arange(10)
+print("numpy slice:", arr[2:7:2])
+df = pd.DataFrame({'A': range(5), 'B': range(5,10)})
+print("pandas iloc:", df.iloc[1:4])
+print("pandas loc:", df.loc[1:3])
