@@ -207,3 +207,50 @@ class Cat(Animal): pass
 def animal_factory(kind: str) -> Animal:
     return {'dog': Dog(), 'cat': Cat()}.get(kind, Animal())
 print("factory:", type(animal_factory('dog')))
+
+
+# --- FUNCTOOLS: PARTIAL, LRU_CACHE, OPERATOR ---
+def pow2(x, y): return x ** y
+pow2_3 = partial(pow2, 2)
+print("partial:", pow2_3(5))
+@lru_cache(maxsize=32)
+def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)
+print("lru_cache fib(10):", fib(10))
+print("operator.mul:", mul(3, 4))
+
+# --- UNIT TESTING WITH UNITTEST ---
+import unittest
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2,3), 5)
+# if __name__ == "__main__":
+#     unittest.main()
+
+# --- LOGGING CONFIG ---
+logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(message)s')
+logging.info("This is an info message.")
+logging.debug("This is a debug message.")  # Won't show due to level    
+
+
+# --- PERFORMANCE: TIMEIT, CPROFILE ---
+print("timeit:", timeit.timeit("sum(range(100))", number=10000))
+cProfile.run("sum(range(10000))")
+
+
+# --- PARALLELISM: CONCURRENT.FUTURES, MULTIPROCESSING, ASYNCIO ---
+from concurrent.futures import ThreadPoolExecutor
+import multiprocessing
+import asyncio
+
+def square(x): return x*x
+def mp_worker(x): return x+1
+async def async_hello():
+    await asyncio.sleep(0.1)
+    return "hello async"
+
+if __name__ == "__main__":
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        print("concurrent.futures:", list(ex.map(square, range(5))))
+    with multiprocessing.Pool(2) as pool:
+        print("multiprocessing:", pool.map(mp_worker, range(5)))
+    print("asyncio:", asyncio.run(async_hello()))
