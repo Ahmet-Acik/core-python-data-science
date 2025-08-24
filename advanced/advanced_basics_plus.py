@@ -166,3 +166,9 @@ lookahead = re.findall(r'\w+(?=\d+)', s)
 lookbehind = re.findall(r'(?<=\d)\w+', s)  # Fixed-width look-behind
 print("lookahead:", lookahead)
 print("lookbehind:", lookbehind)
+
+
+# --- DATETIME: TIMEDELTA, TIMEZONES ---
+dt = datetime(2025, 8, 24, 12, 0, tzinfo=timezone.utc)
+print("timedelta:", dt + timedelta(days=5))
+print("timezone:", dt.astimezone(timezone(timedelta(hours=3))))
