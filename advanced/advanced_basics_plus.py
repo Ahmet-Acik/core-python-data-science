@@ -163,6 +163,6 @@ s = "foo123bar456baz"
 print("re.sub:", re.sub(r'\d+', '#', s))
 print("re.split:", re.split(r'\d+', s))
 lookahead = re.findall(r'\w+(?=\d+)', s)
-lookbehind = re.findall(r'(?<=\d+)\w+', s)
+lookbehind = re.findall(r'(?<=\d)\w+', s)  # Fixed-width look-behind
 print("lookahead:", lookahead)
 print("lookbehind:", lookbehind)
