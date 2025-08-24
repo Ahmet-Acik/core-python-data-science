@@ -65,3 +65,9 @@ print("numpy slice:", arr[2:7:2])
 df = pd.DataFrame({'A': range(5), 'B': range(5,10)})
 print("pandas iloc:", df.iloc[1:4])
 print("pandas loc:", df.loc[1:3])
+
+# --- COPYING WITH PANDAS ---
+df2 = df.copy()
+df2['A'][0] = 99
+print("Original DataFrame:\n", df)
+print("Copied DataFrame:\n", df2)
