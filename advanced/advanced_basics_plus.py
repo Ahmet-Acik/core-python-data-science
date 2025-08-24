@@ -113,3 +113,7 @@ def gen():
 print("generator:", list(gen()))
 print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
 
+# --- DICT UNPACKING & FUNCTION CALL UNPACKING ---
+d = {'x': 1, 'y': 2}
+def foo(x, y): return x + y
+print("dict unpacking:", foo(**d))
