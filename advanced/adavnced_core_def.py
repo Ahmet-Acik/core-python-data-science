@@ -117,3 +117,36 @@ def demo_custom_exceptions():
             raise MyError("Outer error") from e
     except MyError as e:
         print("Exception chaining:", e)
+
+
+def demo_fileio_gzip_excel(df):
+    """Demonstrates file I/O with GZIP and Excel in Python.
+    """
+    # GZIP file I/O with cleanup
+    gz_path = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix='.gz', delete=False) as tmp_gz:
+            gz_path = tmp_gz.name
+        with gzip.open(gz_path, 'wt') as f:
+            f.write('hello gzip')
+        with gzip.open(gz_path, 'rt') as f:
+            print("gzip read:", f.read())
+    finally:
+        if gz_path and os.path.exists(gz_path):
+            os.remove(gz_path)
+
+    # Excel file I/O with cleanup and error handling
+    xlsx_path = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False) as tmp_xlsx:
+            xlsx_path = tmp_xlsx.name
+        df.to_excel(xlsx_path)
+        try:
+            print("Excel read:\n", pd.read_excel(xlsx_path))
+        except ImportError as e:
+            print("Excel read failed: openpyxl or xlsxwriter may not be installed.", e)
+        except Exception as e:
+            print("Excel read failed:", e)
+    finally:
+        if xlsx_path and os.path.exists(xlsx_path):
+            os.remove(xlsx_path)
