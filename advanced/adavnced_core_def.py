@@ -181,3 +181,21 @@ def demo_comprehensions():
     print("set comp:", set_comp)
     print("dict comp:", dict_comp)
     
+
+def demo_typing():
+    """Demonstrates type hints and annotations in Python.
+    """
+    class Point(TypedDict):
+        x: int
+        y: int
+    def move(p: Point, dx: int, dy: int) -> Point:
+        return {'x': p['x']+dx, 'y': p['y']+dy}
+    print("TypedDict:", move({'x':1,'y':2}, 3, 4))
+    def foo_lit(x: Literal['a','b']) -> str:
+        return f"got {x}"
+    print("Literal:", foo_lit('a'))
+    class SupportsLen(Protocol):
+        def __len__(self) -> int: ...
+    def length(obj: SupportsLen) -> int:
+        return len(obj)
+    print("Protocol:", length([1,2,3]))
