@@ -342,3 +342,27 @@ def demo_parallelism():
         print("multiprocessing:", pool.map(mp_worker, range(5)))
     print("asyncio:", asyncio.run(async_hello()))
 # --- END DEMO FUNCTIONS ---
+
+# --- MAIN EXECUTION ---
+
+if __name__ == "__main__":
+    demo_advanced_builtins()
+    df = demo_slicing()
+    demo_copying(df)
+    demo_sets()
+    demo_custom_exceptions()
+    demo_fileio_gzip_excel(df)
+    demo_generators_itertools()
+    demo_dict_unpacking()
+    demo_comprehensions()
+    demo_typing()
+    demo_contextlib()
+    demo_regex()
+    demo_datetime()
+    demo_argparse()
+    demo_oop()
+    demo_functools()
+    demo_unittest()
+    demo_logging()
+    demo_performance()
+    demo_parallelism()
