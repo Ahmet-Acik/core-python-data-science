@@ -56,8 +56,11 @@ import tempfile
 
 
 # --- DEMO FUNCTIONS ---
-
 def demo_advanced_builtins():
+    """
+    Demonstrates advanced built-in functions in Python.
+    Covers: any, all, zip, enumerate, map, filter, reduce
+    """
     nums = [1, 2, 3, 4, 5]
     print("any >3:", any(x > 3 for x in nums))
     print("all >0:", all(x > 0 for x in nums))
