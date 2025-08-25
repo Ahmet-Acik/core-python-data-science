@@ -84,6 +84,7 @@ def demo_slicing():
     print("pandas loc:", df.loc[1:3])
     return df
 
+
 def demo_copying(df):
     """Demonstrates copying DataFrames in pandas.
 
@@ -95,6 +96,7 @@ def demo_copying(df):
     print("Original DataFrame:\n", df)
     print("Copied DataFrame:\n", df2)
 
+
 def demo_sets():
     """Demonstrates the use of sets and frozensets in Python.
     """
@@ -102,3 +104,16 @@ def demo_sets():
     fs = frozenset([4,5,6])
     print("set:", s)
     print("frozenset:", fs)
+
+    
+def demo_custom_exceptions():
+    """Demonstrates custom exceptions and exception chaining in Python.
+    """
+    class MyError(Exception): pass
+    try:
+        try:
+            raise ValueError("Inner error")
+        except ValueError as e:
+            raise MyError("Outer error") from e
+    except MyError as e:
+        print("Exception chaining:", e)
