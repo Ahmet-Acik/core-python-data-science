@@ -293,3 +293,18 @@ def demo_functools():
     def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)
     print("lru_cache fib(10):", fib(10))
     print("operator.mul:", mul(3, 4))
+
+
+def add(x, y):
+    return x + y
+
+def demo_unittest():
+    """Demonstrates unit testing with unittest in Python.
+    """
+    import unittest
+    class TestAdd(unittest.TestCase):
+        def test_add(self):
+            self.assertEqual(add(2,3), 5)
+    print("Unittest demo class defined (not run).")
+    # if __name__ == "__main__":
+    #     unittest.main()
