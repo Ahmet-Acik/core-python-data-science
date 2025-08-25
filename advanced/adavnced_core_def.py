@@ -94,3 +94,11 @@ def demo_copying(df):
     df2.loc[0, 'A'] = 99
     print("Original DataFrame:\n", df)
     print("Copied DataFrame:\n", df2)
+
+def demo_sets():
+    """Demonstrates the use of sets and frozensets in Python.
+    """
+    s = set([1,2,3,2])
+    fs = frozenset([4,5,6])
+    print("set:", s)
+    print("frozenset:", fs)
