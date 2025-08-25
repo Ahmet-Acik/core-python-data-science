@@ -83,3 +83,14 @@ def demo_slicing():
     print("pandas iloc:", df.iloc[1:4])
     print("pandas loc:", df.loc[1:3])
     return df
+
+def demo_copying(df):
+    """Demonstrates copying DataFrames in pandas.
+
+    Args:
+        df (pd.DataFrame): The original DataFrame to copy.
+    """
+    df2 = df.copy()
+    df2.loc[0, 'A'] = 99
+    print("Original DataFrame:\n", df)
+    print("Copied DataFrame:\n", df2)
