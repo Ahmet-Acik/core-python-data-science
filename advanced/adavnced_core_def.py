@@ -162,3 +162,13 @@ def demo_generators_itertools():
     print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
     print("itertools.permutations:", list(itertools.permutations([1,2,3], 2)))
     
+
+def demo_dict_unpacking():
+    """Demonstrates dictionary unpacking in function calls.
+    """
+    d = {'x': 1, 'y': 2}
+    def foo(x, y): return x + y
+    print("dict unpacking:", foo(**d))
+    print("function call unpacking:", foo(1, *(2,)))
+    print("mixed unpacking:", foo(*(1, 2)))
+    
