@@ -236,3 +236,18 @@ def demo_datetime():
     print("datetime (offset):", dt.astimezone(timezone(timedelta(hours=5))))
     print("datetime (custom):", dt.astimezone(timezone(timedelta(hours=-3))))
     print("datetime (fixed):", dt.astimezone(timezone(timedelta(hours=0))))
+
+
+
+def demo_argparse():
+    """Demonstrates argparse usage in Python.
+    """
+    def argparse_demo():
+        parser = argparse.ArgumentParser()
+        group = parser.add_mutually_exclusive_group(required=True)
+        group.add_argument('--foo', action='store_true')
+        group.add_argument('--bar', action='store_true')
+        parser.add_argument('--baz', type=int, required=True)
+        # args = parser.parse_args()
+        # print(args)
+    print("Argparse demo function defined (not called).")
