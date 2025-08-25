@@ -199,3 +199,13 @@ def demo_typing():
     def length(obj: SupportsLen) -> int:
         return len(obj)
     print("Protocol:", length([1,2,3]))
+
+
+def demo_contextlib():
+    """Demonstrates contextlib usage in Python.
+    """
+    with suppress(FileNotFoundError):
+        os.remove('no_such_file.txt')
+    with open('out.txt', 'w') as f, redirect_stdout(f):
+        print("redirected to file")
+    print("redirected file content:", open('out.txt').read())
