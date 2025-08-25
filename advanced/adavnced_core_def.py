@@ -308,3 +308,37 @@ def demo_unittest():
     print("Unittest demo class defined (not run).")
     # if __name__ == "__main__":
     #     unittest.main()
+
+
+def demo_logging():
+    """Demonstrates logging usage in Python.
+    """
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s:%(message)s')
+    logging.info("This is an info message.")
+    logging.debug("This is a debug message.")  # Won't show due to level    
+
+def demo_performance():
+    """Demonstrates performance measurement in Python.
+    """
+    print("timeit:", timeit.timeit("sum(range(100))", number=10000))
+    cProfile.run("sum(range(10000))")
+
+def demo_parallelism():
+    """Demonstrates parallelism in Python.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+    import multiprocessing
+    import asyncio
+
+    def square(x): return x*x
+    def mp_worker(x): return x+1
+    async def async_hello():
+        await asyncio.sleep(0.1)
+        return "hello async"
+
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        print("concurrent.futures:", list(ex.map(square, range(5))))
+    with multiprocessing.Pool(2) as pool:
+        print("multiprocessing:", pool.map(mp_worker, range(5)))
+    print("asyncio:", asyncio.run(async_hello()))
+# --- END DEMO FUNCTIONS ---
