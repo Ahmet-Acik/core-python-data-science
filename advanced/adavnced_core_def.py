@@ -323,15 +323,15 @@ def demo_performance():
     print("timeit:", timeit.timeit("sum(range(100))", number=10000))
     cProfile.run("sum(range(10000))")
 
+def mp_worker(x):
+    return x + 1
+
 def demo_parallelism():
-    """Demonstrates parallelism in Python.
-    """
     from concurrent.futures import ThreadPoolExecutor
     import multiprocessing
     import asyncio
 
     def square(x): return x*x
-    def mp_worker(x): return x+1
     async def async_hello():
         await asyncio.sleep(0.1)
         return "hello async"
