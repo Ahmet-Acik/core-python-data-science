@@ -221,3 +221,18 @@ def demo_regex():
     lookbehind = re.findall(r'(?<=\d)\w+', s)  # Fixed-width look-behind
     print("lookahead:", lookahead)
     print("lookbehind:", lookbehind)
+    
+
+def demo_datetime():
+    """Demonstrates datetime manipulation in Python.
+    """
+    dt = datetime(2025, 8, 24, 12, 0, tzinfo=timezone.utc)
+    print("timedelta:", dt + timedelta(days=5))
+    print("timezone:", dt.astimezone(timezone(timedelta(hours=3))))
+    print("datetime:", dt)
+    print("datetime (naive):", dt.replace(tzinfo=None))
+    print("datetime (UTC):", dt.astimezone(timezone.utc))
+    print("datetime (local):", dt.astimezone())
+    print("datetime (offset):", dt.astimezone(timezone(timedelta(hours=5))))
+    print("datetime (custom):", dt.astimezone(timezone(timedelta(hours=-3))))
+    print("datetime (fixed):", dt.astimezone(timezone(timedelta(hours=0))))
