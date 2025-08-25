@@ -209,3 +209,15 @@ def demo_contextlib():
     with open('out.txt', 'w') as f, redirect_stdout(f):
         print("redirected to file")
     print("redirected file content:", open('out.txt').read())
+
+
+def demo_regex():
+    """Demonstrates regular expressions in Python.
+    """
+    s = "foo123bar456baz"
+    print("re.sub:", re.sub(r'\d+', '#', s))
+    print("re.split:", re.split(r'\d+', s))
+    lookahead = re.findall(r'\w+(?=\d+)', s)
+    lookbehind = re.findall(r'(?<=\d)\w+', s)  # Fixed-width look-behind
+    print("lookahead:", lookahead)
+    print("lookbehind:", lookbehind)
