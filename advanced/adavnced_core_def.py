@@ -281,3 +281,15 @@ def demo_oop():
     def animal_factory(kind: str) -> Animal:
         return {'dog': Dog(), 'cat': Cat()}.get(kind, Animal())
     print("factory:", type(animal_factory('dog')))
+
+
+def demo_functools():
+    '''Demonstrates functools usage in Python.  
+    '''
+    def pow2(x, y): return x ** y
+    pow2_3 = partial(pow2, 2)
+    print("partial:", pow2_3(5))
+    @lru_cache(maxsize=32)
+    def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)
+    print("lru_cache fib(10):", fib(10))
+    print("operator.mul:", mul(3, 4))
