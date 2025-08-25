@@ -251,3 +251,33 @@ def demo_argparse():
         # args = parser.parse_args()
         # print(args)
     print("Argparse demo function defined (not called).")
+
+
+def demo_oop():
+    """Demonstrates object-oriented programming concepts in Python.
+
+    Returns:
+        None
+    """
+    from dataclasses import dataclass
+    @dataclass
+    class Person:
+        name: str
+        age: int
+    p = Person('Alice', 30)
+    print("dataclass:", p)
+    class Singleton:
+        _instance = None
+        def __new__(cls, *a, **kw):
+            if not cls._instance:
+                cls._instance = super().__new__(cls)
+            return cls._instance
+    s1 = Singleton()
+    s2 = Singleton()
+    print("singleton:", s1 is s2)
+    class Animal: pass
+    class Dog(Animal): pass
+    class Cat(Animal): pass
+    def animal_factory(kind: str) -> Animal:
+        return {'dog': Dog(), 'cat': Cat()}.get(kind, Animal())
+    print("factory:", type(animal_factory('dog')))
