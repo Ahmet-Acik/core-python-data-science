@@ -172,3 +172,12 @@ def demo_dict_unpacking():
     print("function call unpacking:", foo(1, *(2,)))
     print("mixed unpacking:", foo(*(1, 2)))
     
+    
+def demo_comprehensions():
+    """Demonstrates set and dictionary comprehensions in Python.
+    """
+    set_comp = {x**2 for x in range(5)}
+    dict_comp = {x: x**2 for x in range(5)}
+    print("set comp:", set_comp)
+    print("dict comp:", dict_comp)
+    
