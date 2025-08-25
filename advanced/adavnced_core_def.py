@@ -150,3 +150,15 @@ def demo_fileio_gzip_excel(df):
     finally:
         if xlsx_path and os.path.exists(xlsx_path):
             os.remove(xlsx_path)
+
+
+def demo_generators_itertools():
+    """Demonstrates generators and itertools in Python.
+    """
+    def gen():
+        for i in range(3):
+            yield i*i
+    print("generator:", list(gen()))
+    print("itertools.cycle:", list(itertools.islice(itertools.cycle([1,2]), 5)))
+    print("itertools.permutations:", list(itertools.permutations([1,2,3], 2)))
+    
