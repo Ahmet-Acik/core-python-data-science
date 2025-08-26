@@ -82,3 +82,13 @@ index_9 = nums.index(9) if 9 in nums else -1
 person_keys = list(person.keys())
 person_values = list(person.values())
 
+
+
+# 9. FUNCTIONAL TOOLS
+from functools import reduce
+evens = list(filter(lambda x: x % 2 == 0, nums))
+squares = list(map(lambda x: x**2, nums))
+product = reduce(lambda x, y: x * y, nums)
+all_positive = all(x > 0 for x in nums)
+any_even = any(x % 2 == 0 for x in nums)
+zipped = list(zip(fruits, colors))
