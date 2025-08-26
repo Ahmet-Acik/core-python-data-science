@@ -138,10 +138,12 @@ while n > 0:
 score: int
 gpa: float
 fruits: list[str]
-person: dict[str, Any]
+# person: dict[str, Any]
 unique_fruits: set[str]
 colors: tuple[str, ...]
 nothing: NoneType
+
+# person: dict[str, Any]  # type: ignore[no-redef]
 
 
 # 15. REGEX & DATETIME
