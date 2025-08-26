@@ -1,3 +1,4 @@
+from typing import Any 
 """
 core_basics_no_functions.py
 ---------------------------
@@ -86,6 +87,7 @@ person_values = list(person.values())
 
 # 9. FUNCTIONAL TOOLS
 from functools import reduce
+from types import NoneType
 evens = list(filter(lambda x: x % 2 == 0, nums))
 squares = list(map(lambda x: x**2, nums))
 product = reduce(lambda x, y: x * y, nums)
@@ -131,3 +133,13 @@ n = 3
 while n > 0:
     countdown_gen.append(n)
     n -= 1
+    
+# 14. TYPE ANNOTATIONS (shown as comments)
+score: int
+gpa: float
+fruits: list[str]
+person: dict[str, Any]
+unique_fruits: set[str]
+colors: tuple[str, ...]
+nothing: NoneType
+
