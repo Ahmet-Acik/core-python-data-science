@@ -143,3 +143,18 @@ unique_fruits: set[str]
 colors: tuple[str, ...]
 nothing: NoneType
 
+
+# 15. REGEX & DATETIME
+import re
+from datetime import datetime, timedelta
+text = "Conference 2025"
+match = re.search(r'\b(20\d{2})\b', text)
+extracted_year = match.group(1) if match else None
+
+today = datetime.today()
+next_week = today + timedelta(days=7)
+week_range = (today.strftime('%Y-%m-%d'), next_week.strftime('%Y-%m-%d'))
+print("This week:", week_range)
+
+
+
