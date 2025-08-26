@@ -18,3 +18,9 @@ gpa = 3.87
 greeting = "Hello!"
 flag = False
 nothing = None
+
+
+# 3. BASIC OPERATIONS
+total = score + 5
+ratio = gpa / 4
+is_high_score = score > 90
