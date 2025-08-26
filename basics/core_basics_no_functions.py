@@ -105,3 +105,9 @@ try:
 except ZeroDivisionError:
     safe_divide_10_0 = 'Cannot divide by zero'
 
+
+# 11. FILE I/O & CONTEXT MANAGERS
+with open('tempfile.txt', 'w') as f:
+    f.write('Temporary data!')
+with open('tempfile.txt', 'r') as f:
+    temp_file_content = f.read()
