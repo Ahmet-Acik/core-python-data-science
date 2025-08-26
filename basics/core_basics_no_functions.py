@@ -120,3 +120,14 @@ from math import ceil
 circle_area = math.pi * 2 ** 2
 ceil_3_7 = ceil(3.7)
 
+
+# 13. DECORATORS & GENERATORS (demonstrated without user-defined functions)
+print('Running...')
+say_hi_result = f"Hi, Streamlit!"
+print('Done!')
+
+countdown_gen = []
+n = 3
+while n > 0:
+    countdown_gen.append(n)
+    n -= 1
