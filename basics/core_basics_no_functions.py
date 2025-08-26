@@ -163,3 +163,69 @@ parser = argparse.ArgumentParser(description='Demo CLI')
 parser.add_argument('--repeat', type=int, default=2)
 args = parser.parse_args([])  # Not using sys.argv for demo
 cli_repeat = args.repeat
+
+
+# 17. EXTENDED USAGE (DEMO OUTPUTS)
+if __name__ == "__main__":
+    print("--- Type Overview ---")
+    print({
+        'score': type(score),
+        'gpa': type(gpa),
+        'fruits': type(fruits),
+        'person': type(person),
+        'unique_fruits': type(unique_fruits),
+        'colors': type(colors),
+        'nothing': type(nothing)
+    })
+
+    print("\n--- Variables & Data Types ---")
+    print(f"Name: {name}, Age: {age}, Height: {height}, Student: {is_student}")
+    print(f"Score: {score}, GPA: {gpa}, Flag: {flag}, Nothing: {nothing}")
+
+    print("\n--- Basic Operations ---")
+    print(f"Total: {total}, Ratio: {ratio}, High score: {is_high_score}")
+
+    print("\n--- Lists, Tuples, Sets, Dicts ---")
+    print(f"Fruits: {fruits}, Colors: {colors}, Unique fruits: {unique_fruits}, Person: {person}")
+
+    print("\n--- Control Flow ---")
+    print(f"Result: {result}")
+    print(f"First long word: {first_long_word}")
+    print(f"Countdown: {countdown}")
+
+    print("\n--- Lambdas & Expressions ---")
+    print(greeted)
+    print(f"Add 2+3: {added}")
+    print(f"Square of 4: {squared}")
+
+    print("\n--- Comprehensions ---")
+    print(f"Lengths: {lengths}, Fruit map: {fruit_map}, First letters: {first_letters}")
+
+    print("\n--- String/List/Dict Methods ---")
+    print(f"Clean: {clean}, Words: {words}, Joined: {joined}, Replaced: {replaced}")
+    print(f"Sorted nums: {nums}, Count of 2: {count_2}, Index of 9: {index_9}")
+
+    print("\n--- Functional Tools ---")
+    print(f"Evens: {evens}, Squares: {squares}, Product: {product}, All positive: {all_positive}, Any even: {any_even}")
+
+    print("\n--- Exception Handling ---")
+    print(f"Safe divide 10/2: {safe_divide_10_2}")
+    print(f"Safe divide 10/0: {safe_divide_10_0}")
+
+    print("\n--- File I/O & Context Managers ---")
+    print(f"Temp file content: {temp_file_content}")
+
+    print("\n--- Modules & Imports ---")
+    print(f"Circle area (r=2): {circle_area}")
+    print(f"Ceil 3.7: {ceil_3_7}")
+
+    print("\n--- Decorators & Generators ---")
+    print(say_hi_result)
+    print(f"Countdown gen: {countdown_gen}")
+
+    print("\n--- Regex & Datetime ---")
+    print(f"Extract year: {extracted_year}")
+    print(f"Week range: {week_range}")
+
+    print("\n--- Argparse ---")
+    print(f"CLI repeat: {cli_repeat}")
