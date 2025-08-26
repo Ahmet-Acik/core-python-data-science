@@ -92,3 +92,16 @@ product = reduce(lambda x, y: x * y, nums)
 all_positive = all(x > 0 for x in nums)
 any_even = any(x % 2 == 0 for x in nums)
 zipped = list(zip(fruits, colors))
+
+
+# 10. EXCEPTION HANDLING
+try:
+    safe_divide_10_2 = 10 / 2
+except ZeroDivisionError:
+    safe_divide_10_2 = 'Cannot divide by zero'
+
+try:
+    safe_divide_10_0 = 10 / 0
+except ZeroDivisionError:
+    safe_divide_10_0 = 'Cannot divide by zero'
+
