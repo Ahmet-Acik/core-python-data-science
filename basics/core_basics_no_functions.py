@@ -111,3 +111,12 @@ with open('tempfile.txt', 'w') as f:
     f.write('Temporary data!')
 with open('tempfile.txt', 'r') as f:
     temp_file_content = f.read()
+    print(temp_file_content)
+    
+
+# 12. MODULES & IMPORTS
+import math
+from math import ceil
+circle_area = math.pi * 2 ** 2
+ceil_3_7 = ceil(3.7)
+
