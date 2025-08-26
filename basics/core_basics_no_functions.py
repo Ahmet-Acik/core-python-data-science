@@ -59,3 +59,9 @@ while n > 0:
 greeted = f"Hi, {name}!"
 added = 2 + 3
 squared = (lambda x: x * x)(4)
+
+
+# 7. COMPREHENSIONS
+lengths = [len(f) for f in fruits]
+fruit_map = {f: len(f) for f in fruits}
+first_letters = {f[0] for f in fruits}
