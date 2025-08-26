@@ -65,3 +65,20 @@ squared = (lambda x: x * x)(4)
 lengths = [len(f) for f in fruits]
 fruit_map = {f: len(f) for f in fruits}
 first_letters = {f[0] for f in fruits}
+
+
+# 8. STRING/LIST/DICT METHODS
+sentence = "  Python is fun!  "
+clean = sentence.strip()
+words = clean.split()
+joined = ",".join(words)
+replaced = clean.replace("fun", "awesome")
+nums = [5, 2, 9, 2]
+nums.sort()
+nums.append(7)
+nums.remove(2)
+count_2 = nums.count(2)
+index_9 = nums.index(9) if 9 in nums else -1
+person_keys = list(person.keys())
+person_values = list(person.values())
+
