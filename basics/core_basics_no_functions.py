@@ -157,4 +157,9 @@ week_range = (today.strftime('%Y-%m-%d'), next_week.strftime('%Y-%m-%d'))
 print("This week:", week_range)
 
 
-
+# 16. ARGPARSE (CLI) - not run, just shown
+import argparse
+parser = argparse.ArgumentParser(description='Demo CLI')
+parser.add_argument('--repeat', type=int, default=2)
+args = parser.parse_args([])  # Not using sys.argv for demo
+cli_repeat = args.repeat
