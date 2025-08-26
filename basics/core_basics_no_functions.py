@@ -24,3 +24,11 @@ nothing = None
 total = score + 5
 ratio = gpa / 4
 is_high_score = score > 90
+
+# 4. LISTS, TUPLES, SETS, DICTS
+fruits = ["apple", "banana", "kiwi"]
+fruits.append("pear")
+colors = ("red", "green", "blue")
+unique_fruits = {"apple", "banana", "apple"}
+person = {"name": name, "age": age}
+person["city"] = "Bursa"
