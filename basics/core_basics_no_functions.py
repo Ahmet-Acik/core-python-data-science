@@ -53,3 +53,9 @@ n = 3
 while n > 0:
     countdown.append(n)
     n -= 1
+
+
+# 6. LAMBDAS & SIMPLE EXPRESSIONS
+greeted = f"Hi, {name}!"
+added = 2 + 3
+squared = (lambda x: x * x)(4)
