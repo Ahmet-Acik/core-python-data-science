@@ -32,3 +32,24 @@ colors = ("red", "green", "blue")
 unique_fruits = {"apple", "banana", "apple"}
 person = {"name": name, "age": age}
 person["city"] = "Bursa"
+
+
+# 5. CONTROL FLOW
+if is_high_score:
+    result = "Excellent"
+elif score > 70:
+    result = "Good"
+else:
+    result = "Needs improvement"
+
+first_long_word = None
+for w in fruits:
+    if len(w) >= 5:
+        first_long_word = w
+        break
+
+countdown = []
+n = 3
+while n > 0:
+    countdown.append(n)
+    n -= 1
