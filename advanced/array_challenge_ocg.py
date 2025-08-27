@@ -44,16 +44,11 @@ nums2 = [0,1,0,3,12]
 print("Move zeros:", move_zeros(nums2))  # Output: [1,3,12,0,0]
 
 
-# 3. Move all zeros to the end (in-place)
-def move_zeros(nums):
-    insert_pos = 0
-    for num in nums:
-        if num != 0:
-            nums[insert_pos] = num
-            insert_pos += 1
-    for i in range(insert_pos, len(nums)):
-        nums[i] = 0
-    return nums
-nums2 = [0,1,0,3,12]
-print("Move zeros:", move_zeros(nums2))  # Output: [1,3,12,0,0]
 
+# 4. Find the missing number in 0..n
+def find_missing_number(nums):
+    n = len(nums)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
+print("Missing number:", find_missing_number([3,0,1]))  # Output: 2
