@@ -82,3 +82,13 @@ def majority_element(nums):
             count -= 1
     return candidate
 print("Majority element:", majority_element([2,2,1,1,1,2,2]))  # Output: 2
+
+
+# 7. Rotate array right by k steps
+def rotate_array(nums, k):
+    k = k % len(nums)
+    nums[:] = nums[-k:] + nums[:-k]
+    return nums
+nums3 = [1,2,3,4,5,6,7]
+print("Rotate right by 3:", rotate_array(nums3, 3))  # Output: [5,6,7,1,2,3,4]
+
