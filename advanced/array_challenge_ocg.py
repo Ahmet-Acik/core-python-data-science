@@ -30,3 +30,15 @@ length = remove_duplicates(nums1)
 print("Remove duplicates:", nums1[:length], "Length:", length)  # Output: [1,2,3] Length: 3
 
 
+# 3. Move all zeros to the end (in-place)
+def move_zeros(nums):
+    insert_pos = 0
+    for num in nums:
+        if num != 0:
+            nums[insert_pos] = num
+            insert_pos += 1
+    for i in range(insert_pos, len(nums)):
+        nums[i] = 0
+    return nums
+nums2 = [0,1,0,3,12]
+print("Move zeros:", move_zeros(nums2))  # Output: [1,3,12,0,0]
