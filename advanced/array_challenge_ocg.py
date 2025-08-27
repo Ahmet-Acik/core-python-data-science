@@ -52,3 +52,16 @@ def find_missing_number(nums):
     actual_sum = sum(nums)
     return expected_sum - actual_sum
 print("Missing number:", find_missing_number([3,0,1]))  # Output: 2
+
+
+# 5. Find all pairs that sum to a target
+def two_sum_pairs(nums, target):
+    seen = set()
+    pairs = set()
+    for num in nums:
+        complement = target - num
+        if complement in seen:
+            pairs.add(tuple(sorted((num, complement))))
+        seen.add(num)
+    return list(pairs)
+print("Pairs summing to 6:", two_sum_pairs([3, 1, 5, 2, 4], 6))  # Output: [(2,4), (1,5), (3,3)]
