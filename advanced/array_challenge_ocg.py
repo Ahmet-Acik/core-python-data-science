@@ -65,3 +65,20 @@ def two_sum_pairs(nums, target):
         seen.add(num)
     return list(pairs)
 print("Pairs summing to 6:", two_sum_pairs([3, 1, 5, 2, 4], 6))  # Output: [(2,4), (1,5), (3,3)]
+
+
+
+# 6. Find the majority element (appears more than n/2 times)
+def majority_element(nums):
+    count = 0
+    candidate = None
+    for num in nums:
+        if count == 0:
+            candidate = num
+            count = 1
+        elif candidate == num:
+            count += 1
+        else:
+            count -= 1
+    return candidate
+print("Majority element:", majority_element([2,2,1,1,1,2,2]))  # Output: 2
