@@ -97,3 +97,17 @@ print("Rotate right by 3:", rotate_array(nums3, 3))  # Output: [5,6,7,1,2,3,4]
 def intersection(nums1, nums2):
     return list(set(nums1) & set(nums2))
 print("Intersection:", intersection([1,2,2,1], [2,2]))  # Output: [2]
+
+
+# 9. Find the longest consecutive sequence
+def longest_consecutive(nums):
+    num_set = set(nums)
+    longest = 0
+    for num in num_set:
+        if num - 1 not in num_set:
+            length = 1
+            while num + length in num_set:
+                length += 1
+            longest = max(longest, length)
+    return longest
+print("Longest consecutive:", longest_consecutive([100,4,200,1,3,2]))  # Output: 4
