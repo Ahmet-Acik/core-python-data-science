@@ -92,3 +92,8 @@ def rotate_array(nums, k):
 nums3 = [1,2,3,4,5,6,7]
 print("Rotate right by 3:", rotate_array(nums3, 3))  # Output: [5,6,7,1,2,3,4]
 
+
+# 8. Find intersection of two arrays (unique elements)
+def intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+print("Intersection:", intersection([1,2,2,1], [2,2]))  # Output: [2]
