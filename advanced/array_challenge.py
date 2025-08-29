@@ -170,3 +170,16 @@ def three_sum(nums):
                 r -= 1
     return res
 print("Three sum:", three_sum([-1,0,1,2,-1,-4]))  # Output: [[-1, -1, 2], [-1, 0, 1]]
+
+
+# 14. Find the minimum in a rotated sorted array
+def find_min_rotated(nums):
+    left, right = 0, len(nums)-1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[right]:
+            left = mid + 1
+        else:
+            right = mid
+    return nums[left]
+print("Min in rotated:", find_min_rotated([4,5,6,7,0,1,2]))  # Output: 0
