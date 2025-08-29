@@ -1,7 +1,7 @@
 """
 string_challenge1.py
 --------------------
-Most common string coding questions and answers for SDET interviews.
+Most common string coding questions and answers for interviews.
 """
 
 # 1. Reverse a string
@@ -88,3 +88,17 @@ print("Remove duplicates:", remove_duplicates("banana"))  # Output: "ban"
 def is_digit_only(s):
     return s.isdigit()
 print("Is digit only:", is_digit_only("12345"))  # Output: True
+
+
+# 11. Find the longest common prefix among a list of strings
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if not prefix:
+                return ""
+    return prefix
+print("Longest common prefix:", longest_common_prefix(["flower","flow","flight"]))  # Output: "fl"
