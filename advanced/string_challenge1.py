@@ -161,3 +161,18 @@ print("Reverse words:", reverse_words("the sky is blue"))  # Output: "blue is sk
 def is_rotation(s1, s2):
     return len(s1) == len(s2) and s2 in (s1 + s1)
 print("Is rotation:", is_rotation("waterbottle", "erbottlewat"))  # Output: True
+
+
+# 19. Find the longest palindromic substring
+def longest_palindrome(s):
+    n = len(s)
+    if n < 2:
+        return s
+    start = max_len = 0
+    for i in range(n):
+        for j in range(i+1, n+1):
+            substr = s[i:j]
+            if substr == substr[::-1] and len(substr) > max_len:
+                start, max_len = i, len(substr)
+    return s[start:start+max_len]
+print("Longest palindrome substring:", longest_palindrome("babad"))  # Output: "bab" or "aba"
