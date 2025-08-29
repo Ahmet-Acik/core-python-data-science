@@ -137,3 +137,12 @@ def first_duplicate(nums):
         seen.add(num)
     return None
 print("First duplicate:", first_duplicate([2, 1, 3, 5, 3, 2]))  # Output: 3
+
+
+# 12. Find the single number (every other appears twice)
+def single_number(nums):
+    result = 0
+    for num in nums:
+        result ^= num
+    return result
+print("Single number:", single_number([4,1,2,1,2]))  # Output: 4
