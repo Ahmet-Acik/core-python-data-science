@@ -102,3 +102,10 @@ def longest_common_prefix(strs):
                 return ""
     return prefix
 print("Longest common prefix:", longest_common_prefix(["flower","flow","flight"]))  # Output: "fl"
+
+
+# 12. Check if a string is a valid palindrome (ignore non-alphanumerics, case-insensitive)
+def is_valid_palindrome(s):
+    filtered = ''.join(c.lower() for c in s if c.isalnum())
+    return filtered == filtered[::-1]
+print("Is valid palindrome:", is_valid_palindrome("A man, a plan, a canal: Panama"))  # Output: True
