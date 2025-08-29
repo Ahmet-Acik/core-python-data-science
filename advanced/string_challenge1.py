@@ -109,3 +109,16 @@ def is_valid_palindrome(s):
     filtered = ''.join(c.lower() for c in s if c.isalnum())
     return filtered == filtered[::-1]
 print("Is valid palindrome:", is_valid_palindrome("A man, a plan, a canal: Panama"))  # Output: True
+
+
+# 13. Find the most frequent character
+def most_frequent_char(s):
+    from collections import Counter
+    count = Counter(s)
+    return count.most_common(1)[0][0] if count else None
+print("Most frequent char:", most_frequent_char("abracadabra"))  # Output: "a"
+
+# 14. Replace all spaces with '%20' (URLify)
+def urlify(s):
+    return s.replace(' ', '%20')
+print("URLify:", urlify("Mr John Smith"))  # Output: "Mr%20John%20Smith"
