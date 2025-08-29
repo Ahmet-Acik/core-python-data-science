@@ -59,3 +59,17 @@ def compress_string(s):
     return ''.join(result)
 print("Compressed string:", compress_string("aabcccccaaa"))  # Output: "a2b1c5a3"
 
+# 7. Find all permutations of a string
+def string_permutations(s):
+    from itertools import permutations
+    return set([''.join(p) for p in permutations(s)])
+print("Permutations:", string_permutations("abc"))  # Output: {'abc', 'acb', 'bac', 'bca', 'cab', 'cba'}
+
+# 8. Count vowels and consonants
+def count_vowels_consonants(s):
+    vowels = set('aeiouAEIOU')
+    v = sum(1 for c in s if c in vowels)
+    c = sum(1 for c in s if c.isalpha() and c not in vowels)
+    return v, c
+print("Vowels/Consonants:", count_vowels_consonants("Hello World!"))  # Output: (3, 7)
+
