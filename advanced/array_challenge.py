@@ -202,3 +202,26 @@ def spiral_order(matrix):
 print("Spiral order:", spiral_order([[1,2,3],[4,5,6],[7,8,9]]))  # Output: [1,2,3,6,9,8,7,4,5]
 
 
+# 16. Find the minimum window subarray with all elements of another array
+def min_window_subarray(arr, target):
+    from collections import Counter
+    need = Counter(target)
+    missing = len(target)
+    left = start = end = 0
+    for right, val in enumerate(arr, 1):
+        if need[val] > 0:
+            missing -= 1
+        need[val] -= 1
+        if missing == 0:
+            while left < right and need[arr[left]] < 0:
+                need[arr[left]] += 1
+                left += 1
+            if end == 0 or right - left < end - start:
+                start, end = left, right
+            need[arr[left]] += 1
+            missing += 1
+            left += 1
+    return arr[start:end] if end > 0 else []
+print("Min window subarray:", min_window_subarray([1,2,2,3,1,2,1,3], [1,3,2]))  # Output: [2,3,1]
+
+
