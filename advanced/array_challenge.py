@@ -225,3 +225,14 @@ def min_window_subarray(arr, target):
 print("Min window subarray:", min_window_subarray([1,2,2,3,1,2,1,3], [1,3,2]))  # Output: [2,3,1]
 
 
+# 17. Find the equilibrium index (sum left == sum right)
+def equilibrium_index(nums):
+    total = sum(nums)
+    left_sum = 0
+    for i, num in enumerate(nums):
+        total -= num
+        if left_sum == total:
+            return i
+        left_sum += num
+    return -1
+print("Equilibrium index:", equilibrium_index([1,3,5,2,2]))  # Output: 2
