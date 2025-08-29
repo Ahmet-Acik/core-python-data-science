@@ -43,3 +43,19 @@ def length_of_longest_substring(s):
     return max_len
 print("Longest substring length:", length_of_longest_substring("abcabcbb"))  # Output: 3
 
+# 6. String compression (e.g., "aabcccccaaa" -> "a2b1c5a3")
+def compress_string(s):
+    if not s:
+        return ""
+    result = []
+    count = 1
+    for i in range(1, len(s)):
+        if s[i] == s[i-1]:
+            count += 1
+        else:
+            result.append(s[i-1] + str(count))
+            count = 1
+    result.append(s[-1] + str(count))
+    return ''.join(result)
+print("Compressed string:", compress_string("aabcccccaaa"))  # Output: "a2b1c5a3"
+
