@@ -257,3 +257,15 @@ def length_of_lis(nums):
             sub[i] = x
     return len(sub)
 print("Length of LIS:", length_of_lis([10,9,2,5,3,7,101,18]))  # Output: 4
+
+
+# 20. Find the minimum number of jumps to reach the end
+def min_jumps(nums):
+    jumps = cur_end = cur_farthest = 0
+    for i in range(len(nums)-1):
+        cur_farthest = max(cur_farthest, i + nums[i])
+        if i == cur_end:
+            jumps += 1
+            cur_end = cur_farthest
+    return jumps
+print("Min jumps:", min_jumps([2,3,1,1,4]))  # Output: 2
