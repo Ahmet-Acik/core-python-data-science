@@ -143,3 +143,21 @@ def one_edit_away(s1, s2):
         j += 1
     return True
 print("One edit away:", one_edit_away("pale", "ple"))  # Output: True
+
+
+# 16. Find all substrings of a string
+def all_substrings(s):
+    return [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1)]
+print("All substrings:", all_substrings("abc"))  # Output: ['a', 'ab', 'abc', 'b', 'bc', 'c']
+
+
+# 17. Reverse words in a sentence
+def reverse_words(sentence):
+    return ' '.join(sentence.split()[::-1])
+print("Reverse words:", reverse_words("the sky is blue"))  # Output: "blue is sky the"
+
+
+# 18. Check if a string is a rotation of another
+def is_rotation(s1, s2):
+    return len(s1) == len(s2) and s2 in (s1 + s1)
+print("Is rotation:", is_rotation("waterbottle", "erbottlewat"))  # Output: True
