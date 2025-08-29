@@ -243,3 +243,17 @@ def max_product(nums):
     nums_sorted = sorted(nums)
     return max(nums_sorted[0]*nums_sorted[1], nums_sorted[-1]*nums_sorted[-2])
 print("Max product:", max_product([1,10,2,6,5,3]))  # Output: 60
+
+
+# 19. Find the longest increasing subsequence length
+def length_of_lis(nums):
+    import bisect
+    sub = []
+    for x in nums:
+        i = bisect.bisect_left(sub, x)
+        if i == len(sub):
+            sub.append(x)
+        else:
+            sub[i] = x
+    return len(sub)
+print("Length of LIS:", length_of_lis([10,9,2,5,3,7,101,18]))  # Output: 4
