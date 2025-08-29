@@ -73,3 +73,18 @@ def count_vowels_consonants(s):
     return v, c
 print("Vowels/Consonants:", count_vowels_consonants("Hello World!"))  # Output: (3, 7)
 
+# 9. Remove all duplicate characters
+def remove_duplicates(s):
+    seen = set()
+    result = []
+    for c in s:
+        if c not in seen:
+            seen.add(c)
+            result.append(c)
+    return ''.join(result)
+print("Remove duplicates:", remove_duplicates("banana"))  # Output: "ban"
+
+# 10. Check if a string contains only digits
+def is_digit_only(s):
+    return s.isdigit()
+print("Is digit only:", is_digit_only("12345"))  # Output: True
