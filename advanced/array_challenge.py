@@ -236,3 +236,10 @@ def equilibrium_index(nums):
         left_sum += num
     return -1
 print("Equilibrium index:", equilibrium_index([1,3,5,2,2]))  # Output: 2
+
+
+# 18. Find the maximum product of two elements
+def max_product(nums):
+    nums_sorted = sorted(nums)
+    return max(nums_sorted[0]*nums_sorted[1], nums_sorted[-1]*nums_sorted[-2])
+print("Max product:", max_product([1,10,2,6,5,3]))  # Output: 60
