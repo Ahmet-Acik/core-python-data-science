@@ -176,3 +176,11 @@ def longest_palindrome(s):
                 start, max_len = i, len(substr)
     return s[start:start+max_len]
 print("Longest palindrome substring:", longest_palindrome("babad"))  # Output: "bab" or "aba"
+
+
+# 20. Count occurrences of each word in a sentence
+def word_count(sentence):
+    from collections import Counter
+    words = sentence.lower().split()
+    return dict(Counter(words))
+print("Word count:", word_count("This is a test. This test is fun!"))  # Output: {'this': 2, 'is': 2, 'a': 1, 'test.': 1, 'test': 1, 'fun!': 1}
