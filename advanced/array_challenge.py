@@ -146,3 +146,27 @@ def single_number(nums):
         result ^= num
     return result
 print("Single number:", single_number([4,1,2,1,2]))  # Output: 4
+
+
+# 13. Find all unique triplets that sum to zero
+def three_sum(nums):
+    nums.sort()
+    res = []
+    n = len(nums)
+    for i in range(n):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        l, r = i+1, n-1
+        while l < r:
+            s = nums[i] + nums[l] + nums[r]
+            if s == 0:
+                res.append([nums[i], nums[l], nums[r]])
+                while l < r and nums[l] == nums[l+1]: l += 1
+                while l < r and nums[r] == nums[r-1]: r -= 1
+                l += 1; r -= 1
+            elif s < 0:
+                l += 1
+            else:
+                r -= 1
+    return res
+print("Three sum:", three_sum([-1,0,1,2,-1,-4]))  # Output: [[-1, -1, 2], [-1, 0, 1]]
