@@ -31,3 +31,15 @@ def first_unique_char(s):
 print("First unique char:", first_unique_char("swiss"))  # Output: "w"
 
 
+# 5. Longest substring without repeating characters
+def length_of_longest_substring(s):
+    char_index = {}
+    left = max_len = 0
+    for right, c in enumerate(s):
+        if c in char_index and char_index[c] >= left:
+            left = char_index[c] + 1
+        char_index[c] = right
+        max_len = max(max_len, right - left + 1)
+    return max_len
+print("Longest substring length:", length_of_longest_substring("abcabcbb"))  # Output: 3
+
