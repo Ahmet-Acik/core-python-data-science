@@ -126,3 +126,14 @@ def product_except_self(nums):
         right *= nums[i]
     return result
 print("Product except self:", product_except_self([1,2,3,4]))  # Output: [24,12,8,6]
+
+
+# 11. Find the first duplicate element
+def first_duplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return num
+        seen.add(num)
+    return None
+print("First duplicate:", first_duplicate([2, 1, 3, 5, 3, 2]))  # Output: 3
