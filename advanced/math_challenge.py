@@ -84,3 +84,12 @@ def sum_digits(n):
     return sum(int(d) for d in str(abs(n)))
 print("Sum of digits in 1234:", sum_digits(1234))  # Output: 10
 print("Sum of digits in -5678:", sum_digits(-5678))  # Output: 26
+
+
+# 9. Reverse an integer
+def reverse_integer(n):
+    sign = -1 if n < 0 else 1
+    reversed_num = int(str(abs(n))[::-1])
+    return sign * reversed_num
+print("Reverse 1234:", reverse_integer(1234))  # Output: 4321
+print("Reverse -5678:", reverse_integer(-5678))  # Output: -8765
