@@ -164,4 +164,8 @@ def sum_cubes(n):
 print("Sum of first 3 cubes:", sum_cubes(3))  # Output: 36
 print("Sum of first 4 cubes:", sum_cubes(4))  # Output: 100
 
-
+# 19. Convert decimal to binary
+def decimal_to_binary(n):
+    return bin(n)[2:]
+print("Binary of 10:", decimal_to_binary(10))  # Output: "1010"
+print("Binary of 255:", decimal_to_binary(255))  # Output: "11111111"
