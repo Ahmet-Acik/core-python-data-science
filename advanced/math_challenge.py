@@ -70,3 +70,10 @@ print("GCD of 48 and 18:", gcd(48, 18))  # Output: 6
 def lcm(a, b):
     return abs(a * b) // gcd(a, b)
 print("LCM of 12 and 15:", lcm(12, 15))  # Output: 60
+
+
+# 7. Count number of digits
+def count_digits(n):
+    return len(str(abs(n)))
+print("Digits in 12345:", count_digits(12345))  # Output: 5
+print("Digits in -9876:", count_digits(-9876))  # Output: 4
