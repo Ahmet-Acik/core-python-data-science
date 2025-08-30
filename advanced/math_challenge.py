@@ -77,3 +77,10 @@ def count_digits(n):
     return len(str(abs(n)))
 print("Digits in 12345:", count_digits(12345))  # Output: 5
 print("Digits in -9876:", count_digits(-9876))  # Output: 4
+
+
+# 8. Sum of digits
+def sum_digits(n):
+    return sum(int(d) for d in str(abs(n)))
+print("Sum of digits in 1234:", sum_digits(1234))  # Output: 10
+print("Sum of digits in -5678:", sum_digits(-5678))  # Output: 26
