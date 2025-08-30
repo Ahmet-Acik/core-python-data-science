@@ -169,3 +169,10 @@ def decimal_to_binary(n):
     return bin(n)[2:]
 print("Binary of 10:", decimal_to_binary(10))  # Output: "1010"
 print("Binary of 255:", decimal_to_binary(255))  # Output: "11111111"
+
+
+# 20. Convert binary to decimal
+def binary_to_decimal(b):
+    return int(b, 2)
+print("Decimal of '1010':", binary_to_decimal("1010"))  # Output: 10
+print("Decimal of '11111111':", binary_to_decimal("11111111"))  # Output: 255
