@@ -102,3 +102,15 @@ def is_armstrong(n):
     return n == sum(int(d)**power for d in digits)
 print("Is 153 Armstrong?", is_armstrong(153))  # Output: True
 print("Is 123 Armstrong?", is_armstrong(123))  # Output: False
+
+
+# 11. Find all factors of a number
+def factors(n):
+    result = set()
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            result.add(i)
+            result.add(n // i)
+    return sorted(result)
+print("Factors of 28:", factors(28))  # Output: [1, 2, 4, 7, 14, 28]
+print("Factors of 36:", factors(36))  # Output: [1, 2, 3, 4, 6, 9, 12, 18, 36]
