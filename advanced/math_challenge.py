@@ -65,3 +65,8 @@ def gcd(a, b):
     return a
 print("GCD of 48 and 18:", gcd(48, 18))  # Output: 6
 
+
+# 6. Least common multiple (LCM)
+def lcm(a, b):
+    return abs(a * b) // gcd(a, b)
+print("LCM of 12 and 15:", lcm(12, 15))  # Output: 60
