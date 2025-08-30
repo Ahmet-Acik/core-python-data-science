@@ -123,3 +123,9 @@ def is_num_palindrome(n):
 print("Is 1221 palindrome?", is_num_palindrome(1221))  # Output: True
 print("Is 1234 palindrome?", is_num_palindrome(1234))  # Output: False
 
+
+# 13. Find the nth root of a number
+def nth_root(x, n):
+    return x ** (1/n)
+print("Cube root of 27:", nth_root(27, 3))  # Output: 3.0
+print("Fourth root of 16:", nth_root(16, 4))  # Output: 2.0
