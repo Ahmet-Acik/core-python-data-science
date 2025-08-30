@@ -56,3 +56,12 @@ def fibonacci_sequence(n):
         a, b = b, a + b
     return seq
 print("Fibonacci sequence up to 50:", fibonacci_sequence(50))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+# 5. Greatest common divisor (GCD)
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+print("GCD of 48 and 18:", gcd(48, 18))  # Output: 6
+
