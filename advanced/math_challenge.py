@@ -146,6 +146,12 @@ def permutations(nums):
 print("Permutations of [1,2,3]:", permutations([1,2,3]))  # Output: [(1,2,3), (1,3,2), ...]
 
 
+# 16. Find the sum of the first n natural numbers
+def sum_natural(n):
+    return n * (n + 1) // 2
+print("Sum of first 100 natural numbers:", sum_natural(100))  # Output: 5050
+
+
 # 17. Find the sum of the first n squares
 def sum_squares(n):
     return n * (n + 1) * (2 * n + 1) // 6
