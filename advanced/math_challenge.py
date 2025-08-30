@@ -114,3 +114,12 @@ def factors(n):
     return sorted(result)
 print("Factors of 28:", factors(28))  # Output: [1, 2, 4, 7, 14, 28]
 print("Factors of 36:", factors(36))  # Output: [1, 2, 3, 4, 6, 9, 12, 18, 36]
+
+
+# 12. Check if a number is a palindrome
+def is_num_palindrome(n):
+    s = str(n)
+    return s == s[::-1]
+print("Is 1221 palindrome?", is_num_palindrome(1221))  # Output: True
+print("Is 1234 palindrome?", is_num_palindrome(1234))  # Output: False
+
