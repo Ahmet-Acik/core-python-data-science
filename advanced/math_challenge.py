@@ -156,3 +156,12 @@ print("Sum of first 100 natural numbers:", sum_natural(100))  # Output: 5050
 def sum_squares(n):
     return n * (n + 1) * (2 * n + 1) // 6
 print("Sum of first 5 squares:", sum_squares(5))  # Output: 55
+
+
+# 18. Find the sum of the first n cubes
+def sum_cubes(n):
+    return (n * (n + 1) // 2) ** 2
+print("Sum of first 3 cubes:", sum_cubes(3))  # Output: 36
+print("Sum of first 4 cubes:", sum_cubes(4))  # Output: 100
+
+
