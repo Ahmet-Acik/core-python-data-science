@@ -129,3 +129,11 @@ def nth_root(x, n):
     return x ** (1/n)
 print("Cube root of 27:", nth_root(27, 3))  # Output: 3.0
 print("Fourth root of 16:", nth_root(16, 4))  # Output: 2.0
+
+
+# 14. Check if a number is a perfect square
+def is_perfect_square(n):
+    root = int(n ** 0.5)
+    return root * root == n
+print("Is 49 a perfect square?", is_perfect_square(49))  # Output: True
+print("Is 50 a perfect square?", is_perfect_square(50))  # Output: False
