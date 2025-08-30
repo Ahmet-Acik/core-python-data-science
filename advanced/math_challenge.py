@@ -37,3 +37,22 @@ def factorial(n):
     return result
 print("Factorial 5:", factorial(5))  # Output: 120
 print("Factorial 0:", factorial(0))  # Output: 1
+
+
+# 4. Compute nth Fibonacci number (iterative)
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+print("Fibonacci(7):", fibonacci(7))  # Output: 13
+
+# All Fibonacci numbers up to n
+def fibonacci_sequence(n):
+    seq = []
+    a, b = 0, 1
+    while a <= n:
+        seq.append(a)
+        a, b = b, a + b
+    return seq
+print("Fibonacci sequence up to 50:", fibonacci_sequence(50))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
