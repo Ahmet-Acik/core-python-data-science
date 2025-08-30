@@ -137,3 +137,16 @@ def is_perfect_square(n):
     return root * root == n
 print("Is 49 a perfect square?", is_perfect_square(49))  # Output: True
 print("Is 50 a perfect square?", is_perfect_square(50))  # Output: False
+
+
+# 15. Generate all permutations of a list of numbers
+def permutations(nums):
+    from itertools import permutations
+    return list(permutations(nums))
+print("Permutations of [1,2,3]:", permutations([1,2,3]))  # Output: [(1,2,3), (1,3,2), ...]
+
+
+# 17. Find the sum of the first n squares
+def sum_squares(n):
+    return n * (n + 1) * (2 * n + 1) // 6
+print("Sum of first 5 squares:", sum_squares(5))  # Output: 55
