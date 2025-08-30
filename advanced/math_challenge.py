@@ -93,3 +93,12 @@ def reverse_integer(n):
     return sign * reversed_num
 print("Reverse 1234:", reverse_integer(1234))  # Output: 4321
 print("Reverse -5678:", reverse_integer(-5678))  # Output: -8765
+
+
+# 10. Check if a number is an Armstrong number, also known as a narcissistic number
+def is_armstrong(n):
+    digits = str(n)
+    power = len(digits)
+    return n == sum(int(d)**power for d in digits)
+print("Is 153 Armstrong?", is_armstrong(153))  # Output: True
+print("Is 123 Armstrong?", is_armstrong(123))  # Output: False
