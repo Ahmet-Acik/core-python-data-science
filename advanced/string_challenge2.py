@@ -43,4 +43,10 @@ print("No punctuation:", no_punct)
 # 6. Replace multiple spaces with a single space
 messy_spaces = "This   is   a    test."
 single_spaced = ' '.join(messy_spaces.split())  # Splits and rejoins to remove extra spaces
-print("Single spaced:", single_spaced)
+print("Single spaced:", single_spaced) # 
+
+
+# 7. Find the longest word in a sentence
+sentence2 = "Python programming is both fun and educational"
+longest = max(sentence2.split(), key=len)
+print("Longest word:", longest)  # "programming"
