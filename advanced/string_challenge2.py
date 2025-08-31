@@ -146,3 +146,12 @@ print("Is integer:", is_num1, "Is float-like:", is_num2)
 # 22. Pad a string with zeros (left)
 padded = "42".zfill(5)
 print("Zero padded:", padded)
+
+
+# 23. Remove a prefix or suffix (Python 3.9+)
+filename = "data_report.csv"
+if hasattr(filename, "removesuffix"):
+    print("Without suffix:", filename.removesuffix(".csv"))
+    print("Without prefix:", filename.removeprefix("data_"))
+else:
+    print("Remove prefix/suffix not supported.")
