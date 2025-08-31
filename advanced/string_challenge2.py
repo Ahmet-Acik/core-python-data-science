@@ -115,4 +115,9 @@ print("Start indices of 'abra':", indices)
 # 17. Remove leading and trailing whitespace and newlines
 messy2 = "   \n\tHello, World!  \n"
 cleaned = messy2.strip()
-print("Stripped string:", repr(cleaned))
+print("Stripped string:", repr(cleaned)) 
+
+# 18. Swap case of all letters
+swap = "PyThOn"
+swapped = swap.swapcase()
+print("Swapcase:", swapped)  # "pYtHoN"
