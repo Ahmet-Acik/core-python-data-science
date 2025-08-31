@@ -14,3 +14,9 @@ sentence = "Anna went to see civic duty at noon in the racecar"
 words = sentence.split()  # Split sentence into words
 palindromes = [w for w in words if w.lower() == w[::-1].lower()]
 print("Palindromic words:", palindromes)  # ['Anna', 'civic', 'noon', 'racecar']
+
+
+# 2. Capitalize the first letter of every word
+text = "hello world! python is fun."
+capitalized = text.title()  # Capitalizes first letter of each word
+print("Title case:", capitalized)  # "Hello World! Python Is Fun."
