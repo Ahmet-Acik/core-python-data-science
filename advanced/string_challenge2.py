@@ -33,3 +33,9 @@ print("Uppercase:", upper_count, "Lowercase:", lower_count) # Output: Uppercase:
 identifier = "my_var1"
 is_valid = identifier.isidentifier()  # Checks Python identifier rules
 print(f"'{identifier}' is valid identifier:", is_valid) # True
+
+
+# 5. Remove all punctuation from a string
+messy = "Hello, world! How's everything?"
+no_punct = messy.translate(str.maketrans('', '', string.punctuation))
+print("No punctuation:", no_punct)
