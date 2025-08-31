@@ -95,3 +95,11 @@ print("Most common word:", most_common_word, "Count:", count)
 email = "test.user@example.com"
 is_email = bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
 print("Is valid email:", is_email)
+
+
+# 15. Count the number of digits, letters, and special characters
+mixed = "abc123!@#"
+digits = sum(c.isdigit() for c in mixed)
+letters = sum(c.isalpha() for c in mixed)
+specials = sum(not c.isalnum() for c in mixed)
+print("Digits:", digits, "Letters:", letters, "Specials:", specials)
