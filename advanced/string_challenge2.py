@@ -64,4 +64,10 @@ substrings_k = [s[i:i+k] for i in range(len(s)-k+1)]
 print(f"All substrings of length {k}:", substrings_k)
 
 
-
+# 10. Group anagrams from a list of words
+word_list = ["listen", "silent", "enlist", "google", "gooegl", "cat", "tac"]
+anagram_groups = {}
+for word in word_list:
+    key = tuple(sorted(word))  # Sort letters to form a key
+    anagram_groups.setdefault(key, []).append(word)
+print("Anagram groups:", list(anagram_groups.values()))
