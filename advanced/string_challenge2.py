@@ -39,3 +39,8 @@ print(f"'{identifier}' is valid identifier:", is_valid) # True
 messy = "Hello, world! How's everything?"
 no_punct = messy.translate(str.maketrans('', '', string.punctuation))
 print("No punctuation:", no_punct)
+
+# 6. Replace multiple spaces with a single space
+messy_spaces = "This   is   a    test."
+single_spaced = ' '.join(messy_spaces.split())  # Splits and rejoins to remove extra spaces
+print("Single spaced:", single_spaced)
