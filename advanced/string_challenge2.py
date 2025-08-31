@@ -71,3 +71,10 @@ for word in word_list:
     key = tuple(sorted(word))  # Sort letters to form a key
     anagram_groups.setdefault(key, []).append(word)
 print("Anagram groups:", list(anagram_groups.values()))
+
+
+# 11. Check if a string contains only printable characters
+test_str = "Hello\nWorld"
+print("Is printable:", test_str.isprintable())  # False due to \n
+
+
