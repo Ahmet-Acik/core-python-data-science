@@ -133,3 +133,11 @@ print("Centered:", centered)
 multiline = "Line1\nLine2\nLine3"
 lines = multiline.splitlines()
 print("Lines:", lines)
+
+
+# 21. Check if a string is numeric (integer or float)
+num_str1 = "12345"
+num_str2 = "12.345"
+is_num1 = num_str1.isdigit()
+is_num2 = num_str2.replace('.', '', 1).isdigit() and num_str2.count('.') < 2
+print("Is integer:", is_num1, "Is float-like:", is_num2)
