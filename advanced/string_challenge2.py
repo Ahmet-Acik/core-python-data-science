@@ -110,3 +110,9 @@ haystack = "abracadabra"
 needle = "abra"
 indices = [i for i in range(len(haystack)) if haystack.startswith(needle, i)]
 print("Start indices of 'abra':", indices)
+
+
+# 17. Remove leading and trailing whitespace and newlines
+messy2 = "   \n\tHello, World!  \n"
+cleaned = messy2.strip()
+print("Stripped string:", repr(cleaned))
