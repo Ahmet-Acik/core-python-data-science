@@ -155,3 +155,9 @@ if hasattr(filename, "removesuffix"):
     print("Without prefix:", filename.removeprefix("data_"))
 else:
     print("Remove prefix/suffix not supported.")
+    
+
+# 24. Find all numbers in a string
+text_with_numbers = "Order 66 was issued in year 19BBY, cost: $500"
+numbers = re.findall(r'\d+', text_with_numbers)
+print("Numbers found:", numbers)
