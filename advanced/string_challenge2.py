@@ -20,3 +20,10 @@ print("Palindromic words:", palindromes)  # ['Anna', 'civic', 'noon', 'racecar']
 text = "hello world! python is fun."
 capitalized = text.title()  # Capitalizes first letter of each word
 print("Title case:", capitalized)  # "Hello World! Python Is Fun."
+
+
+# 3. Count the number of uppercase and lowercase letters
+sample = "PyThOn Is AwEsOmE!"
+upper_count = sum(1 for c in sample if c.isupper())
+lower_count = sum(1 for c in sample if c.islower())
+print("Uppercase:", upper_count, "Lowercase:", lower_count) # Output: Uppercase: 8 Lowercase: 7
