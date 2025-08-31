@@ -27,3 +27,9 @@ sample = "PyThOn Is AwEsOmE!"
 upper_count = sum(1 for c in sample if c.isupper())
 lower_count = sum(1 for c in sample if c.islower())
 print("Uppercase:", upper_count, "Lowercase:", lower_count) # Output: Uppercase: 8 Lowercase: 7
+
+
+# 4. Check if a string is a valid identifier
+identifier = "my_var1"
+is_valid = identifier.isidentifier()  # Checks Python identifier rules
+print(f"'{identifier}' is valid identifier:", is_valid) # True
