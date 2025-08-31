@@ -78,3 +78,7 @@ test_str = "Hello\nWorld"
 print("Is printable:", test_str.isprintable())  # False due to \n
 
 
+# 12. Reverse the order of words in a sentence
+sentence3 = "the quick brown fox"
+reversed_words = ' '.join(sentence3.split()[::-1])
+print("Words reversed:", reversed_words)
