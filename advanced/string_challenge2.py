@@ -82,3 +82,10 @@ print("Is printable:", test_str.isprintable())  # False due to \n
 sentence3 = "the quick brown fox"
 reversed_words = ' '.join(sentence3.split()[::-1])
 print("Words reversed:", reversed_words)
+
+
+# 13. Find the most common word in a paragraph
+paragraph = "dog cat dog bird cat dog"
+words = paragraph.lower().split()
+most_common_word, count = Counter(words).most_common(1)[0]
+print("Most common word:", most_common_word, "Count:", count)
