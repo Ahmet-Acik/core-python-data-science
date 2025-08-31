@@ -161,3 +161,9 @@ else:
 text_with_numbers = "Order 66 was issued in year 19BBY, cost: $500"
 numbers = re.findall(r'\d+', text_with_numbers)
 print("Numbers found:", numbers)
+
+
+# 25. Join a list of strings with a custom separator
+parts = ["2023", "08", "31"]
+date_str = "-".join(parts)
+print("Joined date:", date_str)
