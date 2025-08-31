@@ -103,3 +103,10 @@ digits = sum(c.isdigit() for c in mixed)
 letters = sum(c.isalpha() for c in mixed)
 specials = sum(not c.isalnum() for c in mixed)
 print("Digits:", digits, "Letters:", letters, "Specials:", specials)
+
+
+# 16. Find all start indices of a substring in a string
+haystack = "abracadabra"
+needle = "abra"
+indices = [i for i in range(len(haystack)) if haystack.startswith(needle, i)]
+print("Start indices of 'abra':", indices)
