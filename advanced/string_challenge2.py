@@ -117,7 +117,19 @@ messy2 = "   \n\tHello, World!  \n"
 cleaned = messy2.strip()
 print("Stripped string:", repr(cleaned)) 
 
+
 # 18. Swap case of all letters
 swap = "PyThOn"
 swapped = swap.swapcase()
 print("Swapcase:", swapped)  # "pYtHoN"
+
+
+# 19. Center a string with padding
+centered = "Python".center(20, '*')
+print("Centered:", centered)
+
+
+# 20. Split a string into lines
+multiline = "Line1\nLine2\nLine3"
+lines = multiline.splitlines()
+print("Lines:", lines)
