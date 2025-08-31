@@ -141,3 +141,8 @@ num_str2 = "12.345"
 is_num1 = num_str1.isdigit()
 is_num2 = num_str2.replace('.', '', 1).isdigit() and num_str2.count('.') < 2
 print("Is integer:", is_num1, "Is float-like:", is_num2)
+
+
+# 22. Pad a string with zeros (left)
+padded = "42".zfill(5)
+print("Zero padded:", padded)
