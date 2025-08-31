@@ -89,3 +89,9 @@ paragraph = "dog cat dog bird cat dog"
 words = paragraph.lower().split()
 most_common_word, count = Counter(words).most_common(1)[0]
 print("Most common word:", most_common_word, "Count:", count)
+
+
+# 14. Check if a string is a valid email address (simple regex)
+email = "test.user@example.com"
+is_email = bool(re.match(r"^[\w\.-]+@[\w\.-]+\.\w+$", email))
+print("Is valid email:", is_email)
