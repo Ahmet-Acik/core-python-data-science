@@ -55,3 +55,13 @@ print("Longest word:", longest)  # "programming"
 unique_str = "abcdefg"
 is_unique = len(set(unique_str)) == len(unique_str)
 print("All unique characters:", is_unique)
+
+
+# 9. Find all substrings of length k
+s = "abcdef"
+k = 3
+substrings_k = [s[i:i+k] for i in range(len(s)-k+1)]
+print(f"All substrings of length {k}:", substrings_k)
+
+
+
