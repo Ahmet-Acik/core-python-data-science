@@ -50,3 +50,8 @@ print("Single spaced:", single_spaced) #
 sentence2 = "Python programming is both fun and educational"
 longest = max(sentence2.split(), key=len)
 print("Longest word:", longest)  # "programming"
+
+# 8. Check if all characters in a string are unique
+unique_str = "abcdefg"
+is_unique = len(set(unique_str)) == len(unique_str)
+print("All unique characters:", is_unique)
