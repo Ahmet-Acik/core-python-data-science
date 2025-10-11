@@ -47,7 +47,7 @@ def plot_plotly():
 if __name__ == "__main__":
     print("--- Data Visualization Examples ---")
     # Uncomment to test each plot
-    # plot_line()
-    # plot_histogram()
-    # plot_pandas()
-    # plot_plotly()
+    plot_line()
+    plot_histogram()
+    plot_pandas()
+    plot_plotly()
