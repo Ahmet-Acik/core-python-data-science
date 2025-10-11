@@ -15,7 +15,7 @@ import pandas as pd
 
 def load_and_split():
     """Load iris dataset and split into train/test."""
-    iris, *_ = load_iris(as_frame=True)
+    iris = load_iris(as_frame=True)  # Remove the unpacking with *, _
     X = iris.data
     y = iris.target
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
