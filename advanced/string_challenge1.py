@@ -24,11 +24,11 @@ print("Are anagrams:", are_anagrams("listen", "silent"))  # Output: True
 def first_unique_char(s):
     from collections import Counter
     count = Counter(s)
-    for c in s:
+    for i, c in enumerate(s):
         if count[c] == 1:
-            return c
-    return None
-print("First unique char:", first_unique_char("swiss"))  # Output: "w"
+            return i
+    return -1
+print("First unique char:", first_unique_char("swiss"))  # Output: 1
 
 
 # 5. Longest substring without repeating characters
