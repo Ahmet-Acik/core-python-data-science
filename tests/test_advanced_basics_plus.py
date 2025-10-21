@@ -22,8 +22,10 @@ class TestAdvancedBasicsPlus(unittest.TestCase):
         self.assertEqual(advanced_basics_plus.df['A'][0], 0)
 
     def test_sets_frozensets(self):
-        self.assertIsInstance(advanced_basics_plus.s, set)
-        self.assertIsInstance(advanced_basics_plus.fs, frozenset)
+        s = set([1,2,3,2])
+        fs = frozenset([4,5,6])
+        self.assertIsInstance(s, set)
+        self.assertIsInstance(fs, frozenset)
 
     def test_dict_unpacking(self):
         self.assertEqual(advanced_basics_plus.foo(**advanced_basics_plus.d), 3)
