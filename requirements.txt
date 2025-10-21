@@ -1,3 +1,5 @@
+# Visualization dependencies
+plotly
 numpy
 pandas
 matplotlib
