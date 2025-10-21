@@ -72,6 +72,43 @@ def count_vowels_consonants(s):
     c = sum(1 for c in s if c.isalpha() and c not in vowels)
     return v, c
 print("Vowels/Consonants:", count_vowels_consonants("Hello World!"))  # Output: (3, 7)
+# --- Unit Tests ---
+import unittest
+
+class TestStringChallenges(unittest.TestCase):
+    def test_reverse_string(self):
+        self.assertEqual(reverse_string("hello"), "olleh")
+
+    def test_is_palindrome(self):
+        self.assertTrue(is_palindrome("racecar"))
+        self.assertFalse(is_palindrome("hello"))
+
+    def test_are_anagrams(self):
+        self.assertTrue(are_anagrams("listen", "silent"))
+        self.assertFalse(are_anagrams("hello", "world"))
+
+    def test_first_unique_char(self):
+        self.assertEqual(first_unique_char("swiss"), "w")
+        self.assertIsNone(first_unique_char("aabbcc"))
+
+    def test_length_of_longest_substring(self):
+        self.assertEqual(length_of_longest_substring("abcabcbb"), 3)
+        self.assertEqual(length_of_longest_substring("bbbbb"), 1)
+
+    def test_compress_string(self):
+        self.assertEqual(compress_string("aabcccccaaa"), "a2b1c5a3")
+        self.assertEqual(compress_string("abc"), "a1b1c1")
+
+    def test_string_permutations(self):
+        perms = string_permutations("abc")
+        self.assertEqual(len(perms), 6)
+        self.assertIn("abc", perms)
+
+    def test_count_vowels_consonants(self):
+        self.assertEqual(count_vowels_consonants("Hello World!"), (3, 7))
+
+if __name__ == "__main__":
+    unittest.main()
 
 # 9. Remove all duplicate characters
 def remove_duplicates(s):
