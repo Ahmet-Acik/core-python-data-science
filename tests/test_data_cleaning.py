@@ -5,7 +5,8 @@ from data_science import data_cleaning
 
 class TestDataCleaning(unittest.TestCase):
     def setUp(self):
-        self.df = pd.DataFrame({'A': [1, None, 3, 3], 'B': [' x ', 'Y', 'z ', ' x ']})
+        # Add a true duplicate row for testing
+        self.df = pd.DataFrame({'A': [1, None, 3, 3], 'B': [' x ', 'Y', 'z ', 'z ']})
 
     def test_drop_missing(self):
         cleaned = data_cleaning.drop_missing(self.df)
@@ -17,7 +18,9 @@ class TestDataCleaning(unittest.TestCase):
         self.assertTrue((filled['A'] == 99).any())
 
     def test_remove_duplicates(self):
-        deduped = data_cleaning.remove_duplicates(self.df)
+        # Add a duplicate row for testing
+        df_dup = pd.DataFrame({'A': [1, None, 3, 3], 'B': [' x ', 'Y', 'z ', 'z ']})
+        deduped = data_cleaning.remove_duplicates(df_dup)
         self.assertEqual(len(deduped), 3)
 
     def test_convert_types(self):
@@ -26,7 +29,9 @@ class TestDataCleaning(unittest.TestCase):
 
     def test_handle_outliers_clip(self):
         clipped = data_cleaning.handle_outliers(self.df, 'A', 'clip', 1, 2)
-        self.assertTrue(((clipped['A'] <= 2) & (clipped['A'] >= 1)).all())
+        # Only check non-NaN values
+        valid = clipped['A'].dropna()
+        self.assertTrue(((valid <= 2) & (valid >= 1)).all())
 
     def test_handle_outliers_remove(self):
         removed = data_cleaning.handle_outliers(self.df, 'A', 'remove', 1, 2)
