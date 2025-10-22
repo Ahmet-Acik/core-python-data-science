@@ -38,33 +38,62 @@ from typing import Generator, Callable
 
 
 
-# 1. VARIABLES & ASSIGNMENT
-age = 21
-height = 1.68
-name = "Mina"
-is_student = True
 
+# =========================
+# 1. VARIABLES & ASSIGNMENT
+# =========================
+age = 21  # integer
+height = 1.68  # float
+name = "Mina"  # string
+is_student = True  # boolean
+pi = 3.14159  # float
+count = 0  # integer
+active = False  # boolean
+
+
+# =========================
 # 2. DATA TYPES
+# =========================
 score = 95            # int
 gpa = 3.87            # float
 greeting = "Hello!"   # str
 flag = False          # bool
 nothing = None        # NoneType
+big_num = 10**6       # int
+ratio = 7/3           # float
 
+
+# =========================
 # 3. BASIC OPERATIONS
+# =========================
 total = score + 5
 ratio = gpa / 4
 is_high_score = score > 90
+diff = score - 10
+mult = score * 2
+div = score / 2
+mod = score % 10
+exp = 2 ** 3
 
+
+# =========================
 # 4. LISTS, TUPLES, SETS, DICTS
+# =========================
 fruits = ["apple", "banana", "kiwi"] # List
 fruits.append("pear")
 colors = ("red", "green", "blue") # Tuple
 unique_fruits = {"apple", "banana", "apple"} # Set
 person = {"name": name, "age": age} # Dict
 person["city"] = "Bursa"
+nums_list = [1, 2, 3, 4]
+nums_tuple = (1, 2, 3, 4)
+nums_set = {1, 2, 2, 3}
+nums_dict = {"a": 1, "b": 2}
 
+
+# =========================
 # 5. CONTROL FLOW
+# =========================
 if is_high_score:
     result = "Excellent"
 elif score > 70:
@@ -73,15 +102,21 @@ else:
     result = "Needs improvement"
 
 for fruit in fruits:
-    pass
+    print(f"Fruit: {fruit}")
+for i in range(3):
+    print(f"Index: {i}")
+
 
 def find_first_long_word(words: list[str], min_len: int) -> str | None:
+    """Return the first word with at least min_len characters."""
     for w in words:
         if len(w) >= min_len:
             return w
     return None
 
+
 def count_down(n: int) -> list[int]:
+    """Return a list counting down from n to 1."""
     out = []
     while n > 0:
         out.append(n)
