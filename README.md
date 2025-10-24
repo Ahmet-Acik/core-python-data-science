@@ -50,19 +50,16 @@ A comprehensive, modern Python resource for data science, analytics, and automat
 - Python 3.10+
 - See each file for specific package requirements (e.g., pandas, numpy, matplotlib, seaborn, scikit-learn, plotly).
 - Install all requirements with:
+
   ```sh
   pip install -r requirements.txt
   ```
-
-
 
 ## Contributing
 
 Contributions, suggestions, and improvements are welcome! Open an issue or submit a pull request.
 
-
 ---
-
 
 ---
 
