@@ -38,16 +38,12 @@ A comprehensive, modern Python resource for data science, analytics, and automat
 - Use the scripts and exercises as templates for your own projects, interview prep, or data science workflows.
 - Explore each folder progressively, or jump to the topic or dataset you need.
 
-
-
 ## Recommended Learning Path
 
 1. Start with `basics/core_basics.py` for Python fundamentals.
 2. Move to `advanced/advanced_basics.py` and `advanced/string_challenge1.py` for deeper language features and string mastery.
 3. Master OOP in `oop/` with both practice and advanced patterns.
 4. Practice data science workflows in `data_science/`, including hands-on exercises with real datasets in `data_science/datasets/`.
-
-
 
 ## Requirements
 
