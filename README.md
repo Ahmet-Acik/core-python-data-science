@@ -55,6 +55,38 @@ A comprehensive, modern Python resource for data science, analytics, and automat
   pip install -r requirements.txt
   ```
 
+## Comprehensive Testing
+
+This repository features robust, automated unit tests for all major modules, exercises, and challenge files. The test suite covers:
+
+- **Data science exercises:** All dataset workflows (loading, cleaning, modeling) are tested for correctness and reliability.
+- **String challenges:** Progressive string tasks are validated with dedicated unit tests.
+- **Core and advanced Python:** Fundamental and advanced features are covered, including OOP, design patterns, and practical utilities.
+- **Hands-on templates:** Each code template and exercise is paired with matching tests for learning and validation.
+
+### How to Run All Tests
+
+Activate your Python environment and run all tests with:
+
+```sh
+source .venv/bin/activate
+python -m unittest discover tests
+```
+
+Or, to run all tests in the project (including subfolders):
+
+```sh
+python -m unittest discover
+```
+
+All tests should pass with no errors or skips. The suite currently includes over 200 tests for comprehensive coverage.
+
+### Best Practices
+
+- All test files follow the `test_*.py` naming convention and use `unittest.TestCase` classes.
+- Tests are designed for clarity, reliability, and educational value.
+- Add new tests for any new modules, datasets, or exercises to maintain coverage.
+
 ## Contributing
 
 Contributions, suggestions, and improvements are welcome! Open an issue or submit a pull request.
