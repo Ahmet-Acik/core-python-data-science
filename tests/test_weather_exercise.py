@@ -11,5 +11,12 @@ class TestWeatherExercise(unittest.TestCase):
         weather = pd.read_csv('data_science/datasets/weather.csv')
         self.assertTrue(pd.to_datetime(weather['date'], errors='coerce').notnull().all())
 
+    def test_humidity_and_wind_columns(self):
+        weather = pd.read_csv('data_science/datasets/weather.csv')
+        self.assertIn('humidity', weather.columns)
+        self.assertIn('wind', weather.columns)
+
+ 
+
 if __name__ == '__main__':
     unittest.main()
