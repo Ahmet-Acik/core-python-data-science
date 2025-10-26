@@ -30,7 +30,10 @@ class TestWeatherExercise(unittest.TestCase):
         weather = pd.read_csv('data_science/datasets/weather.csv')
         self.assertFalse(weather.isnull().any().any())
 
-
+    def test_dates_are_sorted(self):
+        weather = pd.read_csv('data_science/datasets/weather.csv')
+        dates = pd.to_datetime(weather['date'], errors='coerce')
+        self.assertTrue(dates.is_monotonic_increasing)
 
 
 if __name__ == '__main__':
