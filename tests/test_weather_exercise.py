@@ -16,6 +16,10 @@ class TestWeatherExercise(unittest.TestCase):
         self.assertIn('humidity', weather.columns)
         self.assertIn('wind', weather.columns)
 
+    def test_temperature_range(self):
+        weather = pd.read_csv('data_science/datasets/weather.csv')
+        self.assertTrue(weather['temperature'].between(10, 30).all())
+
  
 
 if __name__ == '__main__':
