@@ -20,7 +20,13 @@ class TestWeatherExercise(unittest.TestCase):
         weather = pd.read_csv('data_science/datasets/weather.csv')
         self.assertTrue(weather['temperature'].between(10, 30).all())
 
- 
+    def test_average_temperature(self):
+        weather = pd.read_csv('data_science/datasets/weather.csv')
+        avg_temp = weather['temperature'].mean()
+        self.assertGreaterEqual(avg_temp, 15)
+        self.assertLessEqual(avg_temp, 20)
+
+
 
 if __name__ == '__main__':
     unittest.main()
