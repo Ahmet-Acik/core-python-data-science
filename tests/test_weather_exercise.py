@@ -25,6 +25,11 @@ class TestWeatherExercise(unittest.TestCase):
         avg_temp = weather['temperature'].mean()
         self.assertGreaterEqual(avg_temp, 15)
         self.assertLessEqual(avg_temp, 20)
+        
+    def test_no_missing_values(self):
+        weather = pd.read_csv('data_science/datasets/weather.csv')
+        self.assertFalse(weather.isnull().any().any())
+
 
 
 
