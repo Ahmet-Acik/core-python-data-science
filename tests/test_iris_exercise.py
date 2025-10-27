@@ -19,5 +19,11 @@ class TestIrisExercise(unittest.TestCase):
         acc = model.score(X_test, y_test)
         self.assertGreaterEqual(acc, 0)
 
+    def test_expected_columns(self):
+        iris = pd.read_csv('data_science/datasets/iris.csv')
+        expected = {'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'}
+        self.assertEqual(set(iris.columns), expected)
+
+  
 if __name__ == '__main__':
     unittest.main()
