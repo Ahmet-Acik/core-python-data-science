@@ -29,6 +29,14 @@ class TestIrisExercise(unittest.TestCase):
         unique_species = set(iris['species'])
         self.assertTrue({'setosa', 'versicolor', 'virginica'}.issubset(unique_species))
 
+    def test_value_ranges(self):
+        iris = pd.read_csv('data_science/datasets/iris.csv')
+        self.assertTrue(iris['sepal_length'].between(4, 8).all())
+        self.assertTrue(iris['sepal_width'].between(2, 4.5).all())
+        self.assertTrue(iris['petal_length'].between(1, 7).all())
+        self.assertTrue(iris['petal_width'].between(0, 2.5).all())
+
+
 
 if __name__ == '__main__':
     unittest.main()
