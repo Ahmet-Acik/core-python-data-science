@@ -32,6 +32,10 @@ class TestHousingExercise(unittest.TestCase):
         self.assertTrue(housing['median_income'].between(0, 15).all())
         self.assertTrue(housing['median_house_value'].between(100000, 700000).all())
 
+    def test_no_missing_values(self):
+        housing = pd.read_csv('data_science/datasets/housing.csv')
+        self.assertFalse(housing.isnull().any().any())
+
 
 if __name__ == '__main__':
     unittest.main()
