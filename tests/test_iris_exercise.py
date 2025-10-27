@@ -40,7 +40,10 @@ class TestIrisExercise(unittest.TestCase):
         iris = pd.read_csv('data_science/datasets/iris.csv')
         self.assertFalse(iris.isnull().any().any())
 
-
+    def test_class_balance(self):
+        iris = pd.read_csv('data_science/datasets/iris.csv')
+        counts = iris['species'].value_counts()
+        self.assertGreaterEqual(counts.min(), 1)
 
 if __name__ == '__main__':
     unittest.main()
