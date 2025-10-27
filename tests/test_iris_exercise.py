@@ -36,6 +36,10 @@ class TestIrisExercise(unittest.TestCase):
         self.assertTrue(iris['petal_length'].between(1, 7).all())
         self.assertTrue(iris['petal_width'].between(0, 2.5).all())
 
+    def test_no_missing_values(self):
+        iris = pd.read_csv('data_science/datasets/iris.csv')
+        self.assertFalse(iris.isnull().any().any())
+
 
 
 if __name__ == '__main__':
