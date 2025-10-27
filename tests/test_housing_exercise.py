@@ -25,6 +25,13 @@ class TestHousingExercise(unittest.TestCase):
         expected = {'longitude', 'latitude', 'median_income', 'median_house_value'}
         self.assertEqual(set(housing.columns), expected)
 
+    def test_value_ranges(self):
+        housing = pd.read_csv('data_science/datasets/housing.csv')
+        self.assertTrue(housing['longitude'].between(-123, -121).all())
+        self.assertTrue(housing['latitude'].between(37, 39).all())
+        self.assertTrue(housing['median_income'].between(0, 15).all())
+        self.assertTrue(housing['median_house_value'].between(100000, 700000).all())
+
 
 if __name__ == '__main__':
     unittest.main()
