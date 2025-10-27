@@ -42,6 +42,9 @@ class TestHousingExercise(unittest.TestCase):
         self.assertGreaterEqual(avg_value, 200000)
         self.assertLessEqual(avg_value, 600000)
 
+    def test_latitude_monotonic(self):
+        housing = pd.read_csv('data_science/datasets/housing.csv')
+        self.assertTrue(housing['latitude'].is_monotonic_increasing or housing['latitude'].is_monotonic_decreasing)
 
 if __name__ == '__main__':
     unittest.main()
