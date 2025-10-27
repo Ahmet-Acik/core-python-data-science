@@ -24,6 +24,11 @@ class TestIrisExercise(unittest.TestCase):
         expected = {'sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'}
         self.assertEqual(set(iris.columns), expected)
 
-  
+    def test_unique_species(self):
+        iris = pd.read_csv('data_science/datasets/iris.csv')
+        unique_species = set(iris['species'])
+        self.assertTrue({'setosa', 'versicolor', 'virginica'}.issubset(unique_species))
+
+
 if __name__ == '__main__':
     unittest.main()
