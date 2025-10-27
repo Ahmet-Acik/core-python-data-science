@@ -36,6 +36,12 @@ class TestHousingExercise(unittest.TestCase):
         housing = pd.read_csv('data_science/datasets/housing.csv')
         self.assertFalse(housing.isnull().any().any())
 
+    def test_average_house_value(self):
+        housing = pd.read_csv('data_science/datasets/housing.csv')
+        avg_value = housing['median_house_value'].mean()
+        self.assertGreaterEqual(avg_value, 200000)
+        self.assertLessEqual(avg_value, 600000)
+
 
 if __name__ == '__main__':
     unittest.main()
